@@ -125,10 +125,62 @@
             </tbody>
           </table>
 
+
+          <style type="text/css">
+            .clickable {
+                cursor: pointer;
+            }
+          </style>
+
           <!-- PUBLICATION -->
           <table
             style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
             <tbody>
+              <!-- Novel-view Acoustic Synthesis -->
+              <tr onmouseleave="nvas_stop()" onmouseenter="nvas_start()">
+                <td style="padding:20px;width:25%;vertical-align:middle">
+                  <div class="one clickable" onclick="window.location.href='https://docs-assets.developer.apple.com/ml-research/models/nvas/teaser.mp4';">
+                    <div class="two" id='nvas_image'><img class="preload" id='nvas_image_src' src='images/nvas_after.gif'>
+                    </div>
+                    <img src='images/nvas_before.png'>
+                  </div>
+                  <script type="text/javascript">
+                    function nvas_start() {
+                      document.getElementById('nvas_image').style.opacity = "1";
+                      document.getElementById('nvas_image_src').src = "images/nvas_after.gif";
+                    }
+
+                    function nvas_stop() {
+                      document.getElementById('nvas_image').style.opacity = "0";
+                    }
+                    nvas_stop()
+                  </script>
+                </td>
+                <td style="padding:0px;width:75%;vertical-align:middle">
+                  <a href="https://arxiv.org/abs/2310.15130"
+                    target="_blank">
+                    <papertitle>Novel-View Acoustic Synthesis from 3D Reconstructed Rooms</papertitle>
+                  </a>
+                  <br>
+                  <strong>Byeongjoo Ahn</strong>,
+                  <a href="https://karreny.github.io" target="_blank">Karren Yang</a>,
+                  <a href="https://www.brianhamilton.co" target="_blank">Brian Hamilton</a>,
+                  <a href="https://www.linkedin.com/in/jsheaffer/" target="_blank">Jonathan Sheaffer</a>,
+                  <a href="https://anuragranj.github.io" target="_blank">Anurag Ranjan</a>,
+                  <a href="https://scholar.google.co.uk/citations?user=U2mA-EAAAAAJ&amp;hl=en" target="_blank">Miguel Sarabia</a>,
+                  <a href="https://www.onceltuzel.net" target="_blank">Oncel Tuzel</a>,
+                  <a href="https://rick-chang.github.io" target="_blank">Jen-Hao Rick Chang</a>
+                  <br>
+                  <em>arXiV</em>, 2023
+                  <br>
+                  <a href="https://github.com/ByeongjooAhn/neural_kaleidoscopic_space_sculpting" target="_blank">[code]</a>
+                  <a href="https://arxiv.org/abs/2310.15130" target="_blank">[paper]</a>
+                  <a href="https://docs-assets.developer.apple.com/ml-research/models/nvas/teaser.mp4" target="_blank">[video]</a> <i>(headset recommended)</i>
+                  <p></p>
+                  <p>We <i>unmute</i> novel-view synthesis by estimating the sptial sound anywhere in a scene containing multiple unknown sound sources, by combining blind audio recordings with 3D scene information.</p>
+                </td>
+              </tr>
+
                <!-- Neural Kaleidoscopic Space Sculpting -->
                <tr onmouseleave="nkss_stop()" onmouseenter="nkss_start()">
                 <td style="padding:20px;width:25%;vertical-align:middle">
