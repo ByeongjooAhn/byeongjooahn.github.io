@@ -2,34 +2,80 @@
 <html lang="en">
 
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <meta charset="UTF-8">
+  <title>Byeongjoo Ahn</title>
+
+  <!-- ── Google Analytics ── -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-110109441-1"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
+    function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
     gtag('config', 'UA-110109441-1');
   </script>
 
-  <title>Byeongjoo Ahn</title>
+  <!-- ── SEO Basics ── -->
+  <meta name="description" content="Research scientist at Apple focusing on computational imaging and computer vision. Publications, projects, and contact information for Byeongjoo Ahn (안병주).">
+  <meta name="author" content="Byeongjoo Ahn (안병주)">
+  <meta name="keywords" content="
+  Byeongjoo Ahn, 안병주, 
+  computational imaging, computational photography, computer vision, computer graphics, 
+  Apple, 
+  Carnegie Mellon University, CMU, 
+  Korea Institute of Science and Technology, KIST, 
+  Seoul National University, SNU">
+  <link rel="canonical" href="https://byeongjooahn.github.io/">
 
-  <meta name="author" content="Byeongjoo Ahn">
+  <!-- ── Open Graph ── -->
+  <meta property="og:type"        content="website">
+  <meta property="og:url"         content="https://byeongjooahn.github.io/">
+  <meta property="og:title"       content="Byeongjoo Ahn">
+  <meta property="og:description" content="Research scientist at Apple.">
+  <meta property="og:image"       content="https://byeongjooahn.github.io/images/ByeongjooAhn.jpg">
+
+  <!-- ── Person Schema (JSON‑LD) ── -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Person",
+    "name":"Byeongjoo Ahn",
+    "alternateName":"안병주",
+    "jobTitle":"Research Scientist",
+    "worksFor":{"@type":"Organization","name":"Apple"},
+    "alumniOf": [
+      { "@type":"EducationalOrganization", "name":"Carnegie Mellon University", "alternateName":"CMU" },
+      { "@type":"EducationalOrganization", "name":"Seoul National University",  "alternateName":"SNU" }
+    ],
+    "affiliation": [
+      { "@type":"Organization", "name":"Korea Institute of Science and Technology", "alternateName":"KIST" }
+    ],
+    "url":"https://byeongjooahn.github.io",
+    "sameAs":[
+      "https://scholar.google.com/citations?user=sIMyihQAAAAJ",
+      "https://www.linkedin.com/in/byeongjoo-ahn-73b23475/",
+      "https://openreview.net/profile?id=%7EByeongjoo_Ahn5"
+    ]
+  }
+  </script>
+
+  <!-- ── Responsive / Assets ── -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
   <link rel="stylesheet" type="text/css" href="stylesheet.css">
-  <link rel="icon" href="https://imaging.cs.cmu.edu/wp-content/uploads/2020/10/favicon.png" sizes="32x32" />
-  <link rel="icon" href="https://imaging.cs.cmu.edu/wp-content/uploads/2020/10/favicon.png" sizes="192x192" />
-  <link rel="apple-touch-icon-precomposed" href="https://imaging.cs.cmu.edu/wp-content/uploads/2020/10/favicon.png" />
-  <meta name="msapplication-TileImage" content="https://imaging.cs.cmu.edu/wp-content/uploads/2020/10/favicon.png" />
-  <!-- <link rel="icon" type="image/png" href="images/seal_icon.png"> -->
+
+  <!-- ── Icons ── -->
+  <link rel="icon" href="https://imaging.cs.cmu.edu/wp-content/uploads/2020/10/favicon.png" sizes="32x32">
+  <link rel="icon" href="https://imaging.cs.cmu.edu/wp-content/uploads/2020/10/favicon.png" sizes="192x192">
+  <link rel="apple-touch-icon-precomposed" href="https://imaging.cs.cmu.edu/wp-content/uploads/2020/10/favicon.png">
+  <meta name="msapplication-TileImage" content="https://imaging.cs.cmu.edu/wp-content/uploads/2020/10/favicon.png">
+
+  <!-- ── Pre‑load helper (jQuery → vanilla) ── -->
   <script>
-    $(window).load(function () {
-      $('.preload').attr('src', function (i, a) {
-        $(this).attr('src', '')
-          .removeClass('preload')
-          .attr('src', a);
+    window.addEventListener('load', () => {
+      document.querySelectorAll('.preload').forEach(img => {
+        const src = img.getAttribute('data-src') || img.src;
+        img.src = src;
+        img.classList.remove('preload');
       });
     });
   </script>
@@ -41,59 +87,55 @@
     <tbody>
       <tr style="padding:0px">
         <td style="padding:0px">
-          <table
-            style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+          <!-- Profile -->
+          <table style="width:100%;border:0;border-spacing:0;border-collapse:separate;margin-right:auto;margin-left:auto;">
             <tbody>
-              <tr style="padding:0px">
+              <tr style="padding:0">
                 <td style="padding:2.5%;width:67%;vertical-align:middle">
-                  <p style="text-align:center">
-                    <name>Byeongjoo Ahn</name>
-                  </p>
+                  <!-- Headline -->
+                  <h1 style="text-align:center;
+                            font-family:'Roboto',sans-serif;
+                            font-size:32px;
+                            font-weight:700;
+                            margin:0;">
+                    Byeongjoo&nbsp;Ahn
+                    <span lang="ko" 
+                          style="font-size:22px;
+                          font-weight:400;
+                          color:#6c757d;
+                          margin-left:.3em;">
+                      안병주
+                    </span>
+                  </h1>
+
+                  <!-- Original intro paragraph -->
                   <p>
                     I am a research scientist at <a href="https://www.apple.com/" target="_blank">Apple</a> in Seattle. 
-                    I received my Ph.D. from <a href="https://www.cmu.edu/" target="_blank">Carnegie Mellon
-                    University</a>, where I was advised by <a href="https://users.ece.cmu.edu/~saswin/" target="_blank">Aswin
-                    C. Sankaranarayanan</a> and <a href="https://www.cs.cmu.edu/~igkioule/" target="_blank">
-                    Ioannis Gkioulekas</a>. Prior to that, I earned my B.S. and M.S. degrees from <a href="https://en.snu.ac.kr/" target="_blank">Seoul National University</a>,
-                    where I worked with <a href="https://cv.snu.ac.kr/index.php/kmlee/" target="_blank">Kyoung Mu Lee</a>.
-                    Additionally, I worked as a research scientist at the <a href="https://kist.re.kr"
-                      target="_blank">Korea Institute of Science and Technology</a>.
+                    I received my Ph.D. from <a href="https://www.cmu.edu/" target="_blank">Carnegie Mellon University</a>,
+                    where I was advised by <a href="https://users.ece.cmu.edu/~saswin/" target="_blank">Aswin C. Sankaranarayanan</a>
+                    and <a href="https://www.cs.cmu.edu/~igkioule/" target="_blank">Ioannis Gkioulekas</a>. Prior to that, I earned
+                    my B.S. and M.S. degrees from <a href="https://en.snu.ac.kr/" target="_blank">Seoul National University</a>,
+                    where I worked with <a href="https://cv.snu.ac.kr/index.php/kmlee/" target="_blank">Kyoung Mu Lee</a>.
+                    Additionally, I worked as a research scientist at the
+                    <a href="https://kist.re.kr" target="_blank">Korea Institute of Science and Technology</a>.
                   </p>
-                  <p>
-                    My first name is pronounced as 'Be-Young-Joo.'
-                  </p>
+                  <p>My first name is pronounced as “Be‑Young‑Joo.”</p>
 
-                  <!-- <p>
-                    I am a Research Scientist at <a href="https://www.apple.com/" target="_blank">Apple</a>. 
-                    I received my Ph.D. in <a href="https://www.ece.cmu.edu/" target="_blank">Electrical
-                    and Computer Engineering</a> from <a href="https://www.cmu.edu/" target="_blank">Carnegie Mellon
-                    University</a>. There, I was advised by <a href="http://imagesci.ece.cmu.edu/" target="_blank">Prof. Aswin
-                    C. Sankaranarayanan</a> and <a href="https://www.cs.cmu.edu/~igkioule/" target="_blank">Prof.
-                    Ioannis Gkioulekas</a>, and supported by the <a href="https://www.kfas.or.kr/" target="_blank">KFAS
-                    Scholarship</a>.
-                  </p>
-                  <p>
-                    I earned my B.S. in Electrical and Computer Engineering and M.S. in Electrical Engineering and
-                    Computer Science from <a href="https://en.snu.ac.kr/" target="_blank">Seoul National University</a>,
-                    where I worked with <a href="https://cv.snu.ac.kr/index.php/kmlee/" target="_blank">Prof. Kyoung Mu Lee</a>.
-                    I also spent three wonderful years as a Research Scientist at the <a href="https://cai.kist.re.kr/"
-                      target="_blank">Center for Imaging Media Research</a> at the <a href="https://kist.re.kr"
-                      target="_blank">Korea Institute of Science and Technology</a>.
-                  </p> -->
-
+                  <!-- Contact links (GitHub removed) -->
                   <p style="text-align:center">
-                    <a href="mailto:bjahn11@gmail.com">Email</a> &nbsp/&nbsp
-                    <a href="data/CV_bahn.pdf">CV</a> &nbsp/&nbsp
-                    <a href="https://scholar.google.com/citations?user=sIMyihQAAAAJ&hl=en" target="_blank">Google
-                      Scholar</a> &nbsp/&nbsp
+                    <a href="mailto:bjahn11@gmail.com">Email</a> &nbsp;/&nbsp;
+                    <a href="data/CV_bahn.pdf">CV</a> &nbsp;/&nbsp;
+                    <a href="https://scholar.google.com/citations?user=sIMyihQAAAAJ&amp;hl=en" target="_blank">Google&nbsp;Scholar</a> &nbsp;/&nbsp;
                     <a href="https://www.linkedin.com/in/byeongjoo-ahn-73b23475/" target="_blank">LinkedIn</a>
-                    &nbsp/&nbsp
-                    <a href="https://github.com/ByeongjooAhn/" target="_blank">GitHub</a>
                   </p>
                 </td>
+
+                <!-- ░░ Right 33 % : Photo ░░ -->
                 <td style="padding:2.5%;width:33%">
-                  <a href="images/ByeongjooAhn.jpg"><img style="width:100%;max-width:100%" alt="profile photo"
-                      src="images/ByeongjooAhn_circle.jpg" class="hoverZoomLink"></a>
+                  <a href="images/ByeongjooAhn.jpg">
+                    <img style="width:100%;max-width:100%" alt="Profile photo of Byeongjoo Ahn"
+                        src="images/ByeongjooAhn_circle.jpg" class="hoverZoomLink">
+                  </a>
                 </td>
               </tr>
             </tbody>
@@ -120,23 +162,23 @@
           </table> -->
 
           <!-- RESEARCH -->
-          <table
+          <!-- <table
             style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
             <tbody>
               <tr>
                 <td style="padding:20px;width:100%;vertical-align:middle">
                   <heading>Research</heading>
-                  <!-- <p style="text-align:justify">
+                  <p style="text-align:justify">
                     My research interests are in computational imaging and computer vision. I am interested in
                     identifying visible hints offered by our physical surroundings such as interreflections, and
                     developing imaging systems extending the visibility far beyond human ability such as the
                     reconstruction of objects that are not in the direct line of sight or those with strong
                     self-occlusions.
-                  </p> -->
+                  </p> 
                 </td>
               </tr>
             </tbody>
-          </table>
+          </table> -->
 
 
           <style type="text/css">
@@ -149,6 +191,14 @@
           <table
             style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
             <tbody>
+              
+              <!-- Section heading (spans both columns) -->
+              <tr>
+                <td colspan="2" style="padding:20px;vertical-align:middle">
+                  <heading>Research</heading>
+                </td>
+              </tr>
+
               <!-- Novel-view Acoustic Synthesis -->
               <tr onmouseleave="nvas_stop()" onmouseenter="nvas_start()">
                 <td style="padding:20px;width:25%;vertical-align:middle">
@@ -475,11 +525,16 @@
                 <td>
                   <heading>Teaching</heading>
                   <ul>
-                    <li><strong>Teaching Assistant, </strong><a
-                        href="http://graphics.cs.cmu.edu/courses/15-463/2020_fall" target="_blank">15-463/663/862
-                        Computational Photography</a>, Fall 2020</li>
-                    <li><strong>Teaching Assistant, </strong>Recitation for <a href="https://courses.ece.cmu.edu/18290"
-                        target="_blank">18-290 Signals and Systems</a>, Spring 2019, Spring 2020</li>
+                    <li>
+                      <strong>Teaching Assistant</strong>,
+                      <a href="http://graphics.cs.cmu.edu/courses/15-463/2020_fall" target="_blank">
+                        15‑463/663/862 Computational Photography</a>, Fall 2020 (CMU)
+                    </li>
+                    <li>
+                      <strong>Teaching Assistant</strong>, Recitation for
+                      <a href="https://courses.ece.cmu.edu/18290" target="_blank">
+                        18‑290 Signals and Systems</a>, Spring 2019 &amp; Spring 2020 (CMU)
+                    </li>
                   </ul>
                 </td>
               </tr>
