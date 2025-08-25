@@ -133,18 +133,38 @@ body{ padding-top:calc(var(--nav-h) + var(--safe-top)); }
 /* ===== Hero ===== */
 .site-hero{ padding-top:18px; }
 
+/* Safer grid for Safari */
 .hero{
-  display:grid;
-  grid-template-columns: 1fr max-content;
-  gap:40px;
-  align-items:start;
+  display: grid;
+  grid-template-columns: 1fr auto;       /* was: 1fr max-content */
+  gap: 40px;
+  align-items: start;
 }
+
+/* Control the right column width explicitly */
 .hero__photo{
-  width: var(--photo);
-  max-width:100%;
-  justify-self:end;
-  display:flex; align-items:flex-end;
+  justify-self: end;
+  display: flex;
+  align-items: flex-end;
+  width: auto;                           /* let content define width */
+  max-width: var(--photo);               /* cap width via your token */
 }
+
+/* Make the image size the column consistently */
+.hero__photo img{
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: var(--photo);               /* belt & suspenders */
+}
+
+/* (Optional) If you prefer to guarantee the column never exceeds --photo */
+@media (min-width: 720px){
+  .hero{
+    grid-template-columns: 1fr minmax(auto, var(--photo));
+  }
+}
+
 .profile-photo{
   display:block; width:100%; aspect-ratio:1/1; object-fit:cover; height:auto;
   border-radius:16px; box-shadow:0 1px 2px rgba(0,0,0,.06), 0 6px 18px rgba(0,0,0,.08);
@@ -163,17 +183,27 @@ body{ padding-top:calc(var(--nav-h) + var(--safe-top)); }
   text-wrap:pretty;      /* Experimental: keeps nicer wrapping on small screens */
 }
 
-/* Wide desktop only — enforce consistent line breaking across devices */
+/* Wide desktop only — lock text column width so Safari/Chrome wrap the same */
 @media (min-width: 1200px){
+  /* 1) Fix the left (text) column width */
+  .hero{
+    grid-template-columns: 576px auto;   /* ← tune this number after checking Chrome */
+  }
+
+  /* 2) Ensure the text container uses the fixed width */
+  .hero__text{
+    max-width: 576px;                    /* same value as above */
+  }
+
+  /* 3) Let the column control the width (remove per-paragraph max-width) */
   .prose p{
-    max-width: 45em;        /* 1em = font size, so stable across devices */
-    hyphens: none; 
+    max-width: none;                     /* prevent double width-limiting */
+    hyphens: none;
     -webkit-hyphens: none;
     overflow-wrap: break-word;
     text-wrap: normal;
   }
 }
-
 
 /* ===== Quick links (icon-only) ===== */
 .links{
