@@ -298,3 +298,11 @@ body{ padding-top:calc(var(--nav-h) + var(--safe-top)); }
   .container{ max-width:none; padding:0; }
   a{ color:inherit; text-decoration:underline; }
 }
+
+.inline-icon {
+  width:14px;
+  height:14px;
+  vertical-align:text-bottom;
+  margin:0 0 0 0; 
+  fill: currentColor; 
+}
