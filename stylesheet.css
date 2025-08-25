@@ -294,3 +294,20 @@ body{ padding-top:calc(var(--nav-h) + var(--safe-top)); }
   .container{ max-width:none; padding:0; }
   a{ color:inherit; text-decoration:underline; }
 }
+/* ===== Hero final alignment (desktop): text left, links centered ===== */
+@media (min-width: 861px){
+  .hero{
+    align-items: center !important;      /* vertical centering vs. photo */
+  }
+  .hero__text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;                    /* body text stays left-aligned */
+    gap: 10px;
+  }
+  .links{
+    justify-content: center;             /* links centered horizontally */
+    margin-top: 10px;
+  }
+}
