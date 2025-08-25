@@ -166,11 +166,11 @@ body{ padding-top:calc(var(--nav-h) + var(--safe-top)); }
 /* Wide desktop only — enforce consistent line breaking across devices */
 @media (min-width: 1200px){
   .prose p{
-    max-width: 64ch;     /* Fix line width → consistent wrapping regardless of screen */
-    hyphens: none;       /* Disable automatic hyphenation (varies by OS/browser) */
+    max-width: 45em;        /* 1em = font size, so stable across devices */
+    hyphens: none; 
     -webkit-hyphens: none;
-    overflow-wrap: break-word; /* Prevent overly early breaks */
-    text-wrap: normal;   /* Avoid device-specific pretty wrapping differences */
+    overflow-wrap: break-word;
+    text-wrap: normal;
   }
 }
 
