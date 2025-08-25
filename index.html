@@ -80,14 +80,40 @@
 <body>
   <a class="skip-link" href="#content">Skip to content</a>
 
-  <header class="site" role="banner">
+  <!-- ===== Fixed global navigation ===== -->
+  <header class="nav" role="banner">
+    <div class="container nav__bar">
+      <!-- Brand -->
+      <a class="brand" href="/" aria-label="Home">
+        <span class="brand__en">Byeongjoo&nbsp;Ahn</span>
+        <span class="brand__ko" lang="ko">안병주</span>
+      </a>
+
+      <!-- Hamburger (mobile) -->
+      <button class="nav__toggle" aria-label="Toggle navigation" aria-controls="primary-nav" aria-expanded="false">
+        <span class="nav__toggle-bar" aria-hidden="true"></span>
+        <span class="nav__toggle-bar" aria-hidden="true"></span>
+        <span class="nav__toggle-bar" aria-hidden="true"></span>
+      </button>
+
+      <!-- Primary nav links -->
+      <nav id="primary-nav" class="nav__links" aria-label="Primary">
+        <a href="data/byeongjoo-ahn-cv.pdf">CV</a>
+        <a href="#research">Research</a>
+        <a href="#activities">Professional Activities</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== Invisible H1 for SEO/semantics (not visually rendered) ===== -->
+  <h1 class="visually-hidden">Byeongjoo Ahn — Research Scientist at Apple</h1>
+
+  <!-- ===== Hero ===== -->
+  <section class="site-hero">
     <div class="container hero">
       <!-- left -->
       <div class="hero__text">
-        <h1 class="page-title">
-          Byeongjoo&nbsp;Ahn <span class="ko" lang="ko">안병주</span>
-        </h1>
-
+        <!-- Removed visible H1 per request -->
         <div class="prose">
           <p>
             I am a research scientist at
@@ -108,9 +134,9 @@
           <p>My first name is pronounced as “Be-Young-Joo.”</p>
         </div>
 
+        <!-- Quick links (CV removed to avoid duplication with navbar) -->
         <nav class="links" aria-label="Quick links">
           <a href="mailto:bjahn11@gmail.com">Email</a><span aria-hidden="true">·</span>
-          <a href="data/byeongjoo-ahn-cv.pdf">CV</a><span aria-hidden="true">·</span>
           <a href="https://scholar.google.com/citations?user=sIMyihQAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Google Scholar</a><span aria-hidden="true">·</span>
           <a href="https://www.linkedin.com/in/byeongjoo-ahn-73b23475/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
         </nav>
@@ -131,7 +157,7 @@
         </a>
       </div>
     </div>
-  </header>
+  </section>
 
   <main id="content" class="container" role="main">
     <section id="research" class="section" aria-labelledby="research-title">
@@ -466,12 +492,38 @@
   })();
   </script>
 
+  <!-- Mobile navigation toggling -->
+  <script>
+    // Accessible hamburger toggle for mobile
+    (function(){
+      const btn = document.querySelector('.nav__toggle');
+      const nav = document.getElementById('primary-nav');
 
-  <!-- Tap-to-preview script -->
+      function closeNav(){
+        nav.classList.remove('is-open');
+        btn.setAttribute('aria-expanded', 'false');
+      }
+      function openNav(){
+        nav.classList.add('is-open');
+        btn.setAttribute('aria-expanded', 'true');
+      }
+
+      btn.addEventListener('click', () => {
+        const expanded = btn.getAttribute('aria-expanded') === 'true';
+        expanded ? closeNav() : openNav();
+      });
+
+      // Close on Escape or when a link is selected
+      document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeNav(); });
+      nav.querySelectorAll('a').forEach(a => a.addEventListener('click', closeNav));
+    })();
+  </script>
+
+  <!-- Tap-to-preview script (unchanged) -->
   <script>
     (function () {
       const isTouchOnly = window.matchMedia('(hover: none)').matches;
-      if (!isTouchOnly) return; // keep desktop hover behavior
+      if (!isTouchOnly) return;
 
       let active = null;
       let timer = null;
@@ -515,6 +567,27 @@
         }, { passive: true });
       });
     })();
+  </script>
+
+  <script>
+  /* Optional: thin progress hairline under navbar (OFF by default) */
+  (function(){
+    const ENABLE_PROGRESS = off; // set to true to enable the hairline
+    if(!ENABLE_PROGRESS) return;
+
+    document.body.classList.add('show-progress');
+    const set = p => document.documentElement.style.setProperty('--progress', p + '%');
+
+    const onScroll = () => {
+      const h = document.documentElement;
+      const max = h.scrollHeight - h.clientHeight;
+      const pct = max > 0 ? Math.min(100, Math.max(0, (h.scrollTop / max) * 100)) : 0;
+      set(pct);
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
+    onScroll();
+  })();
   </script>
 </body>
 </html>
