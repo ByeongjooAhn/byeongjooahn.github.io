@@ -386,5 +386,56 @@
   <footer class="container footer" role="contentinfo">
     <p class="muted"></p>
   </footer>
+
+  <!-- Tap-to-preview script -->
+  <script>
+    // Global tap-to-preview: first tap previews, second tap navigates (touch-only)
+    (function () {
+      const isTouchOnly = window.matchMedia('(hover: none)').matches;
+      if (!isTouchOnly) return; // keep desktop hover behavior
+
+      let active = null;
+      let timer = null;
+
+      const cards = document.querySelectorAll('.pub-card__media');
+      cards.forEach((a) => {
+        const label = a.getAttribute('aria-label') || 'Publication';
+        if (!/Tap to preview/i.test(label)) {
+          a.setAttribute('aria-label', label + ' — Tap to preview, tap again to open');
+        }
+
+        a.addEventListener('click', function (e) {
+          if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button === 1) return;
+
+          if (active !== a) {
+            e.preventDefault();
+            if (active) active.classList.remove('preview');
+            a.classList.add('preview');
+            active = a;
+
+            clearTimeout(timer);
+            timer = setTimeout(() => {
+              if (active === a) {
+                a.classList.remove('preview');
+                active = null;
+              }
+            }, 1500);
+          } else {
+            a.classList.remove('preview');
+            active = null;
+          }
+        }, false);
+      });
+
+      ['touchstart','scroll','orientationchange'].forEach(evt => {
+        window.addEventListener(evt, () => {
+          if (!active) return;
+          active.classList.remove('preview');
+          active = null;
+          clearTimeout(timer);
+        }, { passive: true });
+      });
+    })();
+  </script>
 </body>
 </html>
