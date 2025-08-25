@@ -183,27 +183,17 @@ body{ padding-top:calc(var(--nav-h) + var(--safe-top)); }
   text-wrap:pretty;      /* Experimental: keeps nicer wrapping on small screens */
 }
 
-/* Wide desktop only — lock text column width so Safari/Chrome wrap the same */
+/* Wide desktop only — enforce consistent line breaking across devices */
 @media (min-width: 1200px){
-  /* 1) Fix the left (text) column width */
-  .hero{
-    grid-template-columns: 576px auto;   /* ← tune this number after checking Chrome */
-  }
-
-  /* 2) Ensure the text container uses the fixed width */
-  .hero__text{
-    max-width: 576px;                    /* same value as above */
-  }
-
-  /* 3) Let the column control the width (remove per-paragraph max-width) */
   .prose p{
-    max-width: none;                     /* prevent double width-limiting */
-    hyphens: none;
+    max-width: 45em;        /* 1em = font size, so stable across devices */
+    hyphens: none; 
     -webkit-hyphens: none;
     overflow-wrap: break-word;
     text-wrap: normal;
   }
 }
+
 
 /* ===== Quick links (icon-only) ===== */
 .links{
