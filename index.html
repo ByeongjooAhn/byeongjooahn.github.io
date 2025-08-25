@@ -1,593 +1,390 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Byeongjoo Ahn</title>
 
-  <!-- ── Google Analytics ── -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-110109441-1"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'UA-110109441-1');
-  </script>
+  <!-- Meta / SEO -->
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Byeongjoo Ahn — Research scientist at Apple. Computational imaging, computer vision, and graphics. Publications, CV, and contact." />
+  <meta name="author" content="Byeongjoo Ahn" />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://byeongjooahn.github.io/" />
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+  <meta name="theme-color" content="#ffffff" />
+  <meta name="color-scheme" content="light dark" />
 
-  <!-- ── SEO Basics ── -->
-  <meta name="description" content="Research scientist at Apple focusing on computational imaging and computer vision. Publications, projects, and contact information for Byeongjoo Ahn (안병주).">
-  <meta name="author" content="Byeongjoo Ahn (안병주)">
-  <meta name="keywords" content="
-  Byeongjoo Ahn, 안병주, 
-  computational imaging, computational photography, computer vision, computer graphics, 
-  Apple, 
-  Carnegie Mellon University, CMU, 
-  Korea Institute of Science and Technology, KIST, 
-  Seoul National University, SNU">
-  <link rel="canonical" href="https://byeongjooahn.github.io/">
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://byeongjooahn.github.io/" />
+  <meta property="og:title" content="Byeongjoo Ahn" />
+  <meta property="og:description" content="Research scientist at Apple. Publications, CV, and contact." />
+  <meta property="og:image" content="https://byeongjooahn.github.io/images/ByeongjooAhn.jpg" />
+  <meta property="og:image:alt" content="Portrait of Byeongjoo Ahn" />
 
-  <!-- ── Open Graph ── -->
-  <meta property="og:type"        content="website">
-  <meta property="og:url"         content="https://byeongjooahn.github.io/">
-  <meta property="og:title"       content="Byeongjoo Ahn">
-  <meta property="og:description" content="Research scientist at Apple.">
-  <meta property="og:image"       content="https://byeongjooahn.github.io/images/ByeongjooAhn.jpg">
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Byeongjoo Ahn" />
+  <meta name="twitter:description" content="Research scientist at Apple. Publications, CV, and contact." />
+  <meta name="twitter:image" content="https://byeongjooahn.github.io/images/ByeongjooAhn.jpg" />
 
-  <!-- ── Person Schema (JSON‑LD) ── -->
+  <!-- Icons -->
+  <link rel="icon" sizes="32x32" href="https://imaging.cs.cmu.edu/wp-content/uploads/2020/10/favicon.png">
+  <link rel="apple-touch-icon" href="https://imaging.cs.cmu.edu/wp-content/uploads/2020/10/favicon.png">
+
+  <!-- Fonts (system-first; Inter optional) -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="stylesheet.css" />
+
+  <!-- JSON-LD -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
     "@type":"Person",
-    "name":"Byeongjoo Ahn",
+    "name":"Byeongjoo Ahn",
     "alternateName":"안병주",
     "jobTitle":"Research Scientist",
     "worksFor":{"@type":"Organization","name":"Apple"},
-    "alumniOf": [
-      { "@type":"EducationalOrganization", "name":"Carnegie Mellon University", "alternateName":"CMU" },
-      { "@type":"EducationalOrganization", "name":"Seoul National University",  "alternateName":"SNU" }
+    "alumniOf":[
+      {"@type":"CollegeOrUniversity","name":"Carnegie Mellon University"},
+      {"@type":"CollegeOrUniversity","name":"Seoul National University"}
     ],
-    "affiliation": [
-      { "@type":"Organization", "name":"Korea Institute of Science and Technology", "alternateName":"KIST" }
-    ],
+    "affiliation":[{"@type":"Organization","name":"Korea Institute of Science and Technology"}],
     "url":"https://byeongjooahn.github.io",
     "sameAs":[
       "https://scholar.google.com/citations?user=sIMyihQAAAAJ",
-      "https://www.linkedin.com/in/byeongjoo-ahn-73b23475/",
-      "https://openreview.net/profile?id=%7EByeongjoo_Ahn5"
+      "https://www.linkedin.com/in/byeongjoo-ahn-73b23475/"
     ]
   }
   </script>
-
-  <!-- ── Responsive / Assets ── -->
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
-  <link rel="stylesheet" type="text/css" href="stylesheet.css">
-
-  <!-- ── Icons ── -->
-  <link rel="icon" href="https://imaging.cs.cmu.edu/wp-content/uploads/2020/10/favicon.png" sizes="32x32">
-  <link rel="icon" href="https://imaging.cs.cmu.edu/wp-content/uploads/2020/10/favicon.png" sizes="192x192">
-  <link rel="apple-touch-icon-precomposed" href="https://imaging.cs.cmu.edu/wp-content/uploads/2020/10/favicon.png">
-  <meta name="msapplication-TileImage" content="https://imaging.cs.cmu.edu/wp-content/uploads/2020/10/favicon.png">
-
-  <!-- ── Pre‑load helper (jQuery → vanilla) ── -->
-  <script>
-    window.addEventListener('load', () => {
-      document.querySelectorAll('.preload').forEach(img => {
-        const src = img.getAttribute('data-src') || img.src;
-        img.src = src;
-        img.classList.remove('preload');
-      });
-    });
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebSite",
+    "name":"Byeongjoo Ahn",
+    "url":"https://byeongjooahn.github.io/",
+    "potentialAction":{
+      "@type":"SearchAction",
+      "target":"https://www.google.com/search?q=site:byeongjooahn.github.io+{search_term_string}",
+      "query-input":"required name=search_term_string"
+    }
+  }
   </script>
 </head>
 
 <body>
-  <table
-    style="width:100%;max-width:850px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-    <tbody>
-      <tr style="padding:0px">
-        <td style="padding:0px">
-          <!-- Profile -->
-          <table style="width:100%;border:0;border-spacing:0;border-collapse:separate;margin-right:auto;margin-left:auto;">
-            <tbody>
-              <tr style="padding:0">
-                <td style="padding:2.5%;width:67%;vertical-align:middle">
-                  <!-- Headline -->
-                  <h1 style="text-align:center;
-                            font-family:'Roboto',sans-serif;
-                            font-size:32px;
-                            font-weight:700;
-                            margin:0;">
-                    Byeongjoo&nbsp;Ahn
-                    <span lang="ko" 
-                          style="font-size:22px;
-                          font-weight:400;
-                          color:#6c757d;
-                          margin-left:.3em;">
-                      안병주
-                    </span>
-                  </h1>
+  <a class="skip-link" href="#content">Skip to content</a>
 
-                  <!-- Original intro paragraph -->
-                  <p>
-                    I am a research scientist at <a href="https://www.apple.com/" target="_blank">Apple</a> in Seattle. 
-                    I received my PhD from <a href="https://www.cmu.edu/" target="_blank">Carnegie Mellon University</a>,
-                    where I was advised by <a href="https://users.ece.cmu.edu/~saswin/" target="_blank">Aswin C. Sankaranarayanan</a>
-                    and <a href="https://www.cs.cmu.edu/~igkioule/" target="_blank">Ioannis Gkioulekas</a>. Prior to that, I earned
-                    my BS and MS degrees from <a href="https://en.snu.ac.kr/" target="_blank">Seoul National University</a>,
-                    where I worked with <a href="https://cv.snu.ac.kr/index.php/kmlee/" target="_blank">Kyoung Mu Lee</a>.
-                    Additionally, I worked as a research scientist at the
-                    <a href="https://kist.re.kr" target="_blank">Korea Institute of Science and Technology</a>.
-                  </p>
-                  <p>My first name is pronounced as “Be‑Young‑Joo.”</p>
+  <header class="site" role="banner">
+    <div class="container hero">
+      <!-- left -->
+      <div class="hero__text">
+        <h1 class="page-title">
+          Byeongjoo&nbsp;Ahn <span class="ko" lang="ko">안병주</span>
+        </h1>
 
-                  <!-- Contact links (GitHub removed) -->
-                  <p style="text-align:center">
-                    <a href="mailto:bjahn11@gmail.com">Email</a> &nbsp;/&nbsp;
-                    <a href="cv/" title="Byeongjoo Ahn – Curriculum Vitae">CV</a> &nbsp;/&nbsp;
-                    <a href="https://scholar.google.com/citations?user=sIMyihQAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google&nbsp;Scholar</a> &nbsp;/&nbsp;
-                    <a href="https://www.linkedin.com/in/byeongjoo-ahn-73b23475/" target="_blank" rel="noopener">LinkedIn</a>
-                  </p>
-                </td>
+        <div class="prose">
+          <p>
+            I am a research scientist at
+            <a href="https://www.apple.com/" target="_blank" rel="noopener noreferrer">Apple</a> in Seattle.
+            I received my PhD from
+            <a href="https://www.cmu.edu/" target="_blank" rel="noopener noreferrer">Carnegie Mellon University</a>,
+            where I was advised by
+            <a href="https://users.ece.cmu.edu/~saswin/" target="_blank" rel="noopener noreferrer">Aswin C. Sankaranarayanan</a>
+            and
+            <a href="https://www.cs.cmu.edu/~igkioule/" target="_blank" rel="noopener noreferrer">Ioannis Gkioulekas</a>.
+            Prior to that, I earned my BS and MS degrees from
+            <a href="https://en.snu.ac.kr/" target="_blank" rel="noopener noreferrer">Seoul National University</a>,
+            where I worked with
+            <a href="https://cv.snu.ac.kr/index.php/kmlee/" target="_blank" rel="noopener noreferrer">Kyoung Mu Lee</a>.
+            Additionally, I worked as a research scientist at the
+            <a href="https://kist.re.kr" target="_blank" rel="noopener noreferrer">Korea Institute of Science and Technology</a>.
+          </p>
+          <p>My first name is pronounced as “Be-Young-Joo.”</p>
+        </div>
 
-                <!-- ░░ Right 33 % : Photo ░░ -->
-                <td style="padding:2.5%;width:33%">
-                  <a href="images/ByeongjooAhn.jpg">
-                    <img style="width:100%;max-width:100%" alt="Profile photo of Byeongjoo Ahn"
-                        src="images/ByeongjooAhn_circle.jpg" class="hoverZoomLink">
-                  </a>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+        <nav class="links" aria-label="Quick links">
+          <a href="mailto:bjahn11@gmail.com">Email</a><span aria-hidden="true">·</span>
+          <a href="data/byeongjoo-ahn-cv.pdf">CV</a><span aria-hidden="true">·</span>
+          <a href="https://scholar.google.com/citations?user=sIMyihQAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Google Scholar</a><span aria-hidden="true">·</span>
+          <a href="https://www.linkedin.com/in/byeongjoo-ahn-73b23475/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        </nav>
+      </div>
 
-          <!-- NEWS -->
-          <!-- <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
-            <tbody>
-              <tr>
-                <td>
-                  <heading>News</heading>
-                  <ul>
-                    <li><strong>June 2023: </strong>Our paper will be presented for a spotlight talk in the <a href="https://ccd2023.github.io/" target="_blank">CCD Workshop at CVPR 2023</a></li>
-                    <li><strong>March 2023: </strong><a href="https://imaging.cs.cmu.edu/neural_kaleidoscopic_space_sculpting/" target="_blank">One paper</a> is accepted at CVPR 2023.</li>
-                    <li><strong>October 2022: </strong>Recognized as a top reviewer at NeurIPS 2022.</li>
-                    <li><strong>September 2021: </strong><a href="https://imaging.cs.cmu.edu/kaleidoscopic_structured_light/" target="_blank">One paper</a> is accepted at SIGGRAPH ASIA 2021.</li>
-                    <li><strong>August 2020: </strong>I finished my summer internship in computational imaging group at
-                      Snap Inc.</li>
-                    <li><strong>July 2019: </strong><a href="https://imaging.cs.cmu.edu/conv_nlos/" target="_blank">One paper</a> is accepted for oral presentation at ICCV 2019.</li>
-                  </ul>
-                </td>
-              </tr>
-            </tbody>
-          </table> -->
+      <!-- right -->
+     <div class="hero__photo">
+        <a href="images/ByeongjooAhn.jpg">
+          <img
+            class="profile-photo"
+            src="images/ByeongjooAhn.jpg"
+            alt="Profile photo of Byeongjoo Ahn"
+            width="840" height="840"
+            loading="eager"
+            fetchpriority="high"
+            decoding="async"
+            sizes="(max-width: 860px) 40vw, 210px">
+        </a>
+      </div>
+    </div>
+  </header>
 
-          <!-- RESEARCH -->
-          <!-- <table
-            style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-            <tbody>
-              <tr>
-                <td style="padding:20px;width:100%;vertical-align:middle">
-                  <heading>Research</heading>
-                  <p style="text-align:justify">
-                    My research interests are in computational imaging and computer vision. I am interested in
-                    identifying visible hints offered by our physical surroundings such as interreflections, and
-                    developing imaging systems extending the visibility far beyond human ability such as the
-                    reconstruction of objects that are not in the direct line of sight or those with strong
-                    self-occlusions.
-                  </p> 
-                </td>
-              </tr>
-            </tbody>
-          </table> -->
+  <main id="content" class="container" role="main">
+    <section id="research" class="section" aria-labelledby="research-title">
+      <h2 class="section__title" id="research-title">Research</h2>
 
+      <ul class="pub-list">
+        <!-- NVAS 2024 -->
+        <li class="pub-card">
+          <a class="pub-card__media" href="https://arxiv.org/abs/2310.15130" target="_blank" rel="noopener noreferrer" aria-label="Novel-View Acoustic Synthesis">
+            <div class="thumb">
+              <img class="before" src="images/nvas_before.png" alt="" width="600" height="600" loading="lazy" decoding="async" sizes="(max-width:740px) 60vw, 150px">
+              <img class="after"  src="images/nvas_after.gif"  alt="" width="600" height="600" loading="lazy" decoding="async" sizes="(max-width:740px) 60vw, 150px">
+            </div>
+          </a>
+          <div class="pub-card__body">
+            <p class="papertitle">
+              <a href="https://arxiv.org/abs/2310.15130" target="_blank" rel="noopener noreferrer">
+                Novel-View Acoustic Synthesis from 3D Reconstructed Rooms
+              </a>
+            </p>
+            <p class="authors">
+              <strong>Byeongjoo Ahn</strong>,
+              <a href="https://karreny.github.io" target="_blank" rel="noopener noreferrer">Karren Yang</a>,
+              <a href="https://www.brianhamilton.co" target="_blank" rel="noopener noreferrer">Brian Hamilton</a>,
+              <a href="https://www.linkedin.com/in/jsheaffer/" target="_blank" rel="noopener noreferrer">Jonathan Sheaffer</a>,
+              <a href="https://anuragranj.github.io" target="_blank" rel="noopener noreferrer">Anurag Ranjan</a>,
+              <a href="https://scholar.google.co.uk/citations?user=U2mA-EAAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Miguel Sarabia</a>,
+              <a href="https://www.onceltuzel.net" target="_blank" rel="noopener noreferrer">Oncel Tuzel</a>,
+              <a href="https://rick-chang.github.io" target="_blank" rel="noopener noreferrer">Jen-Hao Rick Chang</a>
+            </p>
+            <p class="venue">
+              <em><strong>Interspeech</strong></em><span class="upright">, 2024</span>
+            </p>
+            <p class="links-line">
+              <a href="https://github.com/apple/ml-nvas3d" target="_blank" rel="noopener noreferrer">project page</a> ·
+              <a href="https://arxiv.org/abs/2310.15130" target="_blank" rel="noopener noreferrer">paper</a> ·
+              <a href="https://docs-assets.developer.apple.com/ml-research/models/nvas/teaser.mp4" target="_blank" rel="noopener noreferrer">video</a>
+            </p>
+            <p class="summary">Estimating spatial sound in reconstructed scenes by combining blind audio recordings with 3D information.</p>
+          </div>
+        </li>
 
-          <style type="text/css">
-            .clickable {
-                cursor: pointer;
-            }
-          </style>
+        <!-- NKSS 2023 -->
+        <li class="pub-card">
+          <a class="pub-card__media" href="data/neural_kaleidoscopic_cvpr2023.pdf" target="_blank" rel="noopener noreferrer" aria-label="Neural Kaleidoscopic Space Sculpting">
+            <div class="thumb">
+              <img class="before" src="images/nkss_before.png" alt="" width="600" height="600" loading="lazy" decoding="async" sizes="(max-width:740px) 60vw, 150px">
+              <img class="after"  src="images/nkss_after.png"  alt="" width="600" height="600" loading="lazy" decoding="async" sizes="(max-width:740px) 60vw, 150px">
+            </div>
+          </a>
+          <div class="pub-card__body">
+            <p class="papertitle">
+              <a href="data/neural_kaleidoscopic_cvpr2023.pdf" target="_blank" rel="noopener noreferrer">Neural Kaleidoscopic Space Sculpting</a>
+            </p>
+            <p class="authors">
+              <strong>Byeongjoo Ahn</strong>, 
+              <a href="https://www.linkedin.com/in/michael-de-zeeuw/" target="_blank" rel="noopener noreferrer">Michael De Zeeuw</a>,
+              <a href="https://www.cs.cmu.edu/~igkioule/" target="_blank" rel="noopener noreferrer">Ioannis Gkioulekas</a>,
+              <a href="https://users.ece.cmu.edu/~saswin/" target="_blank" rel="noopener noreferrer">Aswin C. Sankaranarayanan</a>
+            </p>
+            <p class="venue">
+              <em>IEEE/CVF Conference on Computer Vision and Pattern Recognition </em>
+              <span class="upright">(<strong>CVPR</strong>), 2023</span>
+            </p>
+            <p class="links-line">
+              <a href="https://imaging.cs.cmu.edu/neural_kaleidoscopic_space_sculpting/" target="_blank" rel="noopener noreferrer">project page</a> ·
+              <a href="data/neural_kaleidoscopic_cvpr2023.pdf" target="_blank" rel="noopener noreferrer">paper</a> ·
+              <a href="data/neural_kaleidoscopic_supp_cvpr2023.pdf" target="_blank" rel="noopener noreferrer">supplement</a> ·
+              <a href="https://www.youtube.com/watch?v=ccheBtcE3Ec" target="_blank" rel="noopener noreferrer">video</a> ·
+              <a href="https://github.com/ByeongjooAhn/neural_kaleidoscopic_space_sculpting" target="_blank" rel="noopener noreferrer">code</a> ·
+              <a href="data/ahn2023neural.bib">bibtex</a>
+            </p>
+            <p class="summary">Full-surround 3D reconstructions from a single kaleidoscopic image via neural surface sculpting.</p>
+          </div>
+        </li>
 
-          <!-- PUBLICATION -->
-          <table
-            style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-            <tbody>
-              
-              <!-- Section heading (spans both columns) -->
-              <tr>
-                <td colspan="2" style="padding:20px;vertical-align:middle">
-                  <heading>Research</heading>
-                </td>
-              </tr>
+        <!-- KSL 2021 -->
+        <li class="pub-card">
+          <a class="pub-card__media" href="https://imaging.cs.cmu.edu/kaleidoscopic_structured_light/assets/kaleidoscopic_structured_light_siggraphasia.pdf" target="_blank" rel="noopener noreferrer" aria-label="Kaleidoscopic Structured Light">
+            <div class="thumb">
+              <img class="before" src="images/ksl_before.png" alt="" width="600" height="600" loading="lazy" decoding="async" sizes="(max-width:740px) 60vw, 150px">
+              <img class="after"  src="images/ksl_after.gif"  alt="" width="600" height="600" loading="lazy" decoding="async" sizes="(max-width:740px) 60vw, 150px">
+            </div>
+          </a>
+          <div class="pub-card__body">
+            <p class="papertitle">
+              <a href="https://imaging.cs.cmu.edu/kaleidoscopic_structured_light/assets/kaleidoscopic_structured_light_siggraphasia.pdf" target="_blank" rel="noopener noreferrer">
+                Kaleidoscopic Structured Light
+              </a>
+            </p>
+            <p class="authors">
+              <strong>Byeongjoo Ahn</strong>,
+              <a href="https://www.cs.cmu.edu/~igkioule/" target="_blank" rel="noopener noreferrer">Ioannis Gkioulekas</a>,
+              <a href="https://users.ece.cmu.edu/~saswin/" target="_blank" rel="noopener noreferrer">Aswin C. Sankaranarayanan</a>
+            </p>
+            <p class="venue">
+              <em>ACM Transactions on Graphics (Proc. <strong>SIGGRAPH Asia</strong></em><span class="upright">), 2021</span>
+            </p>
+            <p class="links-line">
+              <a href="https://imaging.cs.cmu.edu/kaleidoscopic_structured_light/" target="_blank" rel="noopener noreferrer">project page</a> ·
+              <a href="https://imaging.cs.cmu.edu/kaleidoscopic_structured_light/assets/kaleidoscopic_structured_light_siggraphasia.pdf" target="_blank" rel="noopener noreferrer">paper</a> ·
+              <a href="https://www.youtube.com/watch?v=By8LYtBW33s" target="_blank" rel="noopener noreferrer">video</a> ·
+              <a href="data/ahn2021kaleidoscopic.bib">bibtex</a>
+            </p>
+            <p class="summary">Structured light with hundreds of virtual projectors and cameras for full-surround scanning.</p>
+          </div>
+        </li>
 
-              <!-- Novel-view Acoustic Synthesis -->
-              <tr onmouseleave="nvas_stop()" onmouseenter="nvas_start()">
-                <td style="padding:20px;width:25%;vertical-align:middle">
-                  <div class="one clickable" onclick="window.location.href='https://docs-assets.developer.apple.com/ml-research/models/nvas/teaser.mp4';">
-                    <div class="two" id='nvas_image'><img class="preload" id='nvas_image_src' src='images/nvas_after.gif'>
-                    </div>
-                    <img src='images/nvas_before.png'>
-                  </div>
-                  <script type="text/javascript">
-                    function nvas_start() {
-                      document.getElementById('nvas_image').style.opacity = "1";
-                      document.getElementById('nvas_image_src').src = "images/nvas_after.gif";
-                    }
+        <!-- CONVNLOS 2019 -->
+        <li class="pub-card">
+          <a class="pub-card__media" href="https://imaging.cs.cmu.edu/conv_nlos/assets/conv_nlos_iccv.pdf" target="_blank" rel="noopener noreferrer" aria-label="Convolutional Approximations to the General NLOS Imaging Operator">
+            <div class="thumb">
+              <img class="before" src="images/convnlos_before_still.gif" alt="" width="600" height="600" loading="lazy" decoding="async" sizes="(max-width:740px) 60vw, 150px">
+              <img class="after"  src="images/convnlos_after.gif"       alt="" width="600" height="600" loading="lazy" decoding="async" sizes="(max-width:740px) 60vw, 150px">
+            </div>
+          </a>
+          <div class="pub-card__body">
+            <p class="papertitle">
+              <a href="https://imaging.cs.cmu.edu/conv_nlos/assets/conv_nlos_iccv.pdf" target="_blank" rel="noopener noreferrer">
+                Convolutional Approximations to the General Non-Line-of-Sight Imaging Operator
+              </a>
+            </p>
+            <p class="authors">
+              <strong>Byeongjoo Ahn</strong>,
+              <a href="https://ad74.blogs.rice.edu/" target="_blank" rel="noopener noreferrer">Akshat Dave</a>,
+              <a href="https://computationalimaging.rice.edu/team/ashok-veeraraghavan/" target="_blank" rel="noopener noreferrer">Ashok Veeraraghavan</a>,
+              <a href="https://www.cs.cmu.edu/~igkioule/" target="_blank" rel="noopener noreferrer">Ioannis Gkioulekas</a>,
+              <a href="https://users.ece.cmu.edu/~saswin/" target="_blank" rel="noopener noreferrer">Aswin C. Sankaranarayanan</a>
+            </p>
+            <p class="venue">
+              <em>IEEE/CVF International Conference on Computer Vision </em>
+              <span class="upright">(<strong>ICCV</strong>), 2019</span>
+              <span class="upright">(<strong>Oral</strong>)</span>
+            </p>
+            <p class="links-line">
+              <a href="https://imaging.cs.cmu.edu/conv_nlos/" target="_blank" rel="noopener noreferrer">project page</a> ·
+              <a href="https://imaging.cs.cmu.edu/conv_nlos/assets/conv_nlos_iccv.pdf" target="_blank" rel="noopener noreferrer">paper</a> ·
+              <a href="https://imaging.cs.cmu.edu/conv_nlos/assets/conv_nlos_iccv_supp.pdf" target="_blank" rel="noopener noreferrer">supplement</a> ·
+              <a href="data/ahn2019convolutional.bib">bibtex</a>
+            </p>
+            <p class="summary">A convolutional perspective of the NLOS operator enabling efficient reconstruction.</p>
+          </div>
+        </li>
 
-                    function nvas_stop() {
-                      document.getElementById('nvas_image').style.opacity = "0";
-                    }
-                    nvas_stop()
-                  </script>
-                </td>
-                <td style="padding:0px;width:75%;vertical-align:middle">
-                  <a href="https://arxiv.org/abs/2310.15130"
-                    target="_blank">
-                    <papertitle>Novel-View Acoustic Synthesis from 3D Reconstructed Rooms</papertitle>
-                  </a>
-                  <br>
-                  <strong>Byeongjoo Ahn</strong>,
-                  <a href="https://karreny.github.io" target="_blank">Karren Yang</a>,
-                  <a href="https://www.brianhamilton.co" target="_blank">Brian Hamilton</a>,
-                  <a href="https://www.linkedin.com/in/jsheaffer/" target="_blank">Jonathan Sheaffer</a>,
-                  <a href="https://anuragranj.github.io" target="_blank">Anurag Ranjan</a>,
-                  <a href="https://scholar.google.co.uk/citations?user=U2mA-EAAAAAJ&amp;hl=en" target="_blank">Miguel Sarabia</a>,
-                  <a href="https://www.onceltuzel.net" target="_blank">Oncel Tuzel</a>,
-                  <a href="https://rick-chang.github.io" target="_blank">Jen-Hao Rick Chang</a>
-                  <br>
-                  <em><strong>Interspeech</strong></em>, 2024
-                  <br>
-                  <a href="https://github.com/apple/ml-nvas3d" target="_blank">[code]</a>
-                  <a href="https://arxiv.org/abs/2310.15130" target="_blank">[paper]</a>
-                  <a href="https://docs-assets.developer.apple.com/ml-research/models/nvas/teaser.mp4" target="_blank">[video]</a> (headset recommended)
-                  <p></p>
-                  <p>We <i>unmute</i> novel-view synthesis by estimating the spatial sound anywhere in a scene containing multiple unknown sound sources, by combining blind audio recordings with 3D scene information.</p>
-                </td>
-              </tr>
+        <!-- OAVD 2016 -->
+        <li class="pub-card">
+          <a class="pub-card__media" href="https://arxiv.org/pdf/1611.09572.pdf" target="_blank" rel="noopener noreferrer" aria-label="Occlusion-Aware Video Deblurring">
+            <div class="thumb">
+              <img class="before" src="images/oavd_before.png" alt="" width="600" height="600" loading="lazy" decoding="async" sizes="(max-width:740px) 60vw, 150px">
+              <img class="after"  src="images/oavd_after.png"  alt="" width="600" height="600" loading="lazy" decoding="async" sizes="(max-width:740px) 60vw, 150px">
+            </div>
+          </a>
+          <div class="pub-card__body">
+            <p class="papertitle">
+              <a href="https://arxiv.org/pdf/1611.09572.pdf" target="_blank" rel="noopener noreferrer">
+                Occlusion-Aware Video Deblurring with a New Layered Blur Model
+              </a>
+            </p>
+            <p class="authors">
+              <strong>Byeongjoo Ahn</strong>,
+              <a href="https://sites.google.com/site/lliger9/" target="_blank" rel="noopener noreferrer">Tae Hyun Kim</a>,
+              <a href="https://cv.snu.ac.kr/wonsik_kim/" target="_blank" rel="noopener noreferrer">Wonsik Kim</a>,
+              <a href="https://cv.snu.ac.kr/index.php/kmlee/" target="_blank" rel="noopener noreferrer">Kyoung Mu Lee</a>
+            </p>
+            <p class="venue"><em>Tech report</em><span class="upright">, 2016</span></p>
+            <p class="links-line">
+              <a href="https://arxiv.org/pdf/1611.09572.pdf" target="_blank" rel="noopener noreferrer">paper</a> ·
+              <a href="data/ahn2016occlusion.bib">bibtex</a>
+            </p>
+            <p class="summary">Layered blur model handling occlusions for video deblurring.</p>
+          </div>
+        </li>
 
-               <!-- Neural Kaleidoscopic Space Sculpting -->
-               <tr onmouseleave="nkss_stop()" onmouseenter="nkss_start()">
-                <td style="padding:20px;width:25%;vertical-align:middle">
-                  <div class="one">
-                    <div class="two" id='nkss_image'><img src='images/nkss_after.png'></div>
-                    <img src='images/nkss_before.png'>
-                  </div>
-                  <script type="text/javascript">
-                    function nkss_start() {
-                      document.getElementById('nkss_image').style.opacity = "1";
-                    }
-                    function nkss_stop() {
-                      document.getElementById('nkss_image').style.opacity = "0";
-                    }
-                    nkss_stop()
-                  </script>
-                </td>
-                <td style="padding:0px;width:75%;vertical-align:middle">
-                  <a href="data/neural_kaleidoscopic_cvpr2023.pdf"
-                    target="_blank">
-                    <papertitle>Neural Kaleidoscopic Space Sculpting</papertitle>
-                  </a>
-                  <br>
-                  <strong>Byeongjoo Ahn</strong>,
-                  Michael De Zeeuw,
-                  <a href="https://www.cs.cmu.edu/~igkioule/" target="_blank">Ioannis Gkioulekas</a>,
-                  <a href="https://users.ece.cmu.edu/~saswin/" target="_blank">Aswin C. Sankaranarayanan</a>
-                  <br>
-                  <em>IEEE/CVF Conference on Computer Vision and Pattern Recognition (<strong>CVPR</strong>)</em>, 2023
-                  <br>
-                  <a href="https://imaging.cs.cmu.edu/neural_kaleidoscopic_space_sculpting/" target="_blank">[project
-                    page]</a>
-                  <a href="data/neural_kaleidoscopic_cvpr2023.pdf" target="_blank">[paper]</a>
-                  <a href="data/neural_kaleidoscopic_supp_cvpr2023.pdf" target="_blank">[supplement]</a>
-                  <a href="https://www.youtube.com/watch?v=ccheBtcE3Ec" target="_blank">[video]</a>
-                  <a href="https://github.com/ByeongjooAhn/neural_kaleidoscopic_space_sculpting" target="_blank">[code]</a>
-                  <a href="data/ahn2023neural.bib">[bibtex]</a>
-                  <p></p>
-                  <p>We introduce a method that recovers full-surround 3D reconstructions from a <i>single</i> kaleidoscopic image by <i>sculpting</i> a neural surface representation.</p>
-                </td>
-              </tr>
+        <!-- RIP 2016 -->
+        <li class="pub-card">
+          <a class="pub-card__media" href="data/rip_sa.pdf" target="_blank" rel="noopener noreferrer" aria-label="Reduced Illumination Patterns">
+            <div class="thumb">
+              <img class="before" src="images/rip_before.png" alt="" width="600" height="600" loading="lazy" decoding="async" sizes="(max-width:740px) 60vw, 150px">
+              <img class="after"  src="images/rip_after.png"  alt="" width="600" height="600" loading="lazy" decoding="async" sizes="(max-width:740px) 60vw, 150px">
+            </div>
+          </a>
+          <div class="pub-card__body">
+            <p class="papertitle">
+              <a href="data/rip_sa.pdf" target="_blank" rel="noopener noreferrer">
+                Reduced Illumination Patterns for Acquisition of Specular and Diffuse Normal Maps
+              </a>
+            </p>
+            <p class="authors">
+              <strong>Byeongjoo Ahn</strong>, <a href="http://jhcho.info/" target="_blank" rel="noopener noreferrer">Junghyun Cho</a>,
+              Taekyung Yoo, <a href="https://sites.google.com/view/ijkim" target="_blank" rel="noopener noreferrer">Ig-Jae Kim</a>
+            </p>
+            <p class="venue"><em>ACM SIGGRAPH Asia Posters</em><span class="upright">, 2016</span></p>
+            <p class="links-line">
+              <a href="data/rip_sa.pdf" target="_blank" rel="noopener noreferrer">paper</a> ·
+              <a href="data/ahn2016reduced.bib">bibtex</a>
+            </p>
+            <p class="summary">Polarization-based normal map acquisition with fewer patterns.</p>
+          </div>
+        </li>
 
-              <!-- Kaleidoscopic Structured Light -->
-              <tr onmouseleave="ksl_stop()" onmouseenter="ksl_start()">
-                <td style="padding:20px;width:25%;vertical-align:middle">
-                  <div class="one">
-                    <div class="two" id='ksl_image'><img class="preload" id='ksl_image_src' src='images/ksl_after.gif'>
-                    </div>
-                    <img src='images/ksl_before.png'>
-                  </div>
-                  <script type="text/javascript">
-                    function ksl_start() {
-                      document.getElementById('ksl_image').style.opacity = "1";
-                      document.getElementById('ksl_image_src').src = "images/ksl_after.gif";
-                    }
+        <!-- DSD 2013 -->
+        <li class="pub-card">
+          <a class="pub-card__media" href="https://www.cv-foundation.org/openaccess/content_iccv_2013/papers/Kim_Dynamic_Scene_Deblurring_2013_ICCV_paper.pdf" target="_blank" rel="noopener noreferrer" aria-label="Dynamic Scene Deblurring">
+            <div class="thumb">
+              <img class="before" src="images/dsd_before.png" alt="" width="600" height="600" loading="lazy" decoding="async" sizes="(max-width:740px) 60vw, 150px">
+              <img class="after"  src="images/dsd_after.png"  alt="" width="600" height="600" loading="lazy" decoding="async" sizes="(max-width:740px) 60vw, 150px">
+            </div>
+          </a>
+          <div class="pub-card__body">
+            <p class="papertitle">
+              <a href="https://www.cv-foundation.org/openaccess/content_iccv_2013/papers/Kim_Dynamic_Scene_Deblurring_2013_ICCV_paper.pdf" target="_blank" rel="noopener noreferrer">
+                Dynamic Scene Deblurring
+              </a>
+            </p>
+            <p class="authors">
+              <a href="https://sites.google.com/site/lliger9/" target="_blank" rel="noopener noreferrer">Tae Hyun Kim</a>,
+              <strong>Byeongjoo Ahn</strong>,
+              <a href="https://cv.snu.ac.kr/index.php/kmlee/" target="_blank" rel="noopener noreferrer">Kyoung Mu Lee</a>
+            </p>
+            <p class="venue">
+              <em>IEEE International Conference on Computer Vision </em>
+              <span class="upright">(<strong>ICCV</strong>), 2013</span>
+            </p>
+            <p class="links-line">
+              <a href="https://www.cv-foundation.org/openaccess/content_iccv_2013/papers/Kim_Dynamic_Scene_Deblurring_2013_ICCV_paper.pdf" target="_blank" rel="noopener noreferrer">paper</a> ·
+              <a href="data/kim2013dynamic.bib">bibtex</a>
+            </p>
+            <p class="summary">Joint estimation of latent image, motion, and soft segmentation for dynamic scenes.</p>
+          </div>
+        </li>
+      </ul>
+    </section>
 
-                    function ksl_stop() {
-                      document.getElementById('ksl_image').style.opacity = "0";
-                    }
-                    ksl_stop()
-                  </script>
-                </td>
-                <td style="padding:0px;width:75%;vertical-align:middle">
-                  <a href="https://imaging.cs.cmu.edu/kaleidoscopic_structured_light/assets/kaleidoscopic_structured_light_siggraphasia.pdf"
-                    target="_blank">
-                    <papertitle>Kaleidoscopic Structured Light</papertitle>
-                  </a>
-                  <br>
-                  <strong>Byeongjoo Ahn</strong>,
-                  <a href="https://www.cs.cmu.edu/~igkioule/" target="_blank">Ioannis Gkioulekas</a>,
-                  <a href="https://users.ece.cmu.edu/~saswin/" target="_blank">Aswin C. Sankaranarayanan</a>
-                  <br>
-                  <em>ACM Transactions on Graphics (Proc. <strong>SIGGRAPH Asia</strong>)</em>, 2021
-                  <br>
-                  <a href="https://imaging.cs.cmu.edu/kaleidoscopic_structured_light/" target="_blank">[project
-                    page]</a>
-                  <a href="https://imaging.cs.cmu.edu/kaleidoscopic_structured_light/assets/kaleidoscopic_structured_light_siggraphasia.pdf"
-                    target="_blank">[paper]</a>
-                  <a href="https://www.youtube.com/watch?v=By8LYtBW33s" target="_blank">[video]</a>
-                  <a href="data/ahn2021kaleidoscopic.bib">[bibtex]</a>
-                  <p></p>
-                  <p>We introduce a kaleidoscopic structured light system that generates hundreds of virtual projectors
-                    and cameras for full surround 3D scans of intricate objects.</p>
-                </td>
-              </tr>
+    <section id="activities" class="section" aria-labelledby="activities-title">
+      <h2 class="section__title" id="activities-title">Professional Activities</h2>
+      <ul class="simple-list">
+        <li><strong>Area Chair</strong>, <span class="upright">CVPR</span> <span class="muted">(2026)</span></li>
+        <li><strong>Area Chair</strong>, <span class="upright">ICML</span> <span class="muted">(2025)</span></li>
+        <li><strong>Area Chair</strong>, <span class="upright">NeurIPS</span> <span class="muted">(2024, 2025)</span></li>
+        <li><strong>Program Committee</strong>, <span class="upright">ICCP</span> <span class="muted">(2023, 2024, 2025)</span></li>
+        <li><strong>Reviewer</strong>, CVPR, ICCV, ECCV, BMVC, ICLR, NeurIPS, SIGGRAPH, SIGGRAPH Asia, TIP, TCI</li>
+      </ul>
+    </section>
 
-              <!-- CONVNLOS -->
-              <tr onmouseleave="convnlos_stop()" onmouseenter="convnlos_start()">
-                <td style="padding:20px;width:25%;vertical-align:middle">
-                  <div class="one">
-                    <div class="two" id='convnlos_image'><img class="preload" id='convnlos_image_src'
-                        src='images/convnlos_after.gif'></div>
-                    <img src='images/convnlos_before_still.gif'>
-                  </div>
-                  <script type="text/javascript">
-                    function convnlos_start() {
-                      document.getElementById('convnlos_image').style.opacity = "1";
-                      document.getElementById('convnlos_image_src').src = "images/convnlos_after.gif";
-                    }
+    <section id="teaching" class="section" aria-labelledby="teaching-title">
+      <h2 class="section__title" id="teaching-title">Teaching</h2>
+      <ul class="simple-list">
+        <li><strong>Teaching Assistant</strong>, <a href="http://graphics.cs.cmu.edu/courses/15-463/2020_fall" target="_blank" rel="noopener noreferrer">15-463/663/862 Computational Photography</a>, Fall 2020 (CMU)</li>
+        <li><strong>Teaching Assistant</strong>, <a href="https://courses.ece.cmu.edu/18290" target="_blank" rel="noopener noreferrer">18-290 Signals and Systems</a>, Spring 2019 &amp; Spring 2020 (CMU)</li>
+      </ul>
+    </section>
+  </main>
 
-                    function convnlos_stop() {
-                      document.getElementById('convnlos_image').style.opacity = "0";
-                    }
-                    convnlos_stop()
-                  </script>
-                </td>
-                <td style="padding:0px;width:75%;vertical-align:middle">
-                  <a href="https://imaging.cs.cmu.edu/conv_nlos/assets/conv_nlos_iccv.pdf" target="_blank">
-                    <papertitle>Convolutional Approximations to the General Non-Line-of-Sight Imaging Operator
-                    </papertitle>
-                  </a>
-                  <br>
-                  <strong>Byeongjoo Ahn</strong>,
-                  <a href="https://ad74.blogs.rice.edu/" target="_blank">Akshat Dave</a>,
-                  <a href="https://computationalimaging.rice.edu/team/ashok-veeraraghavan/" target="_blank">Ashok
-                    Veeraraghavan</a>,
-                  <a href="https://www.cs.cmu.edu/~igkioule/" target="_blank">Ioannis Gkioulekas</a>,
-                  <a href="https://users.ece.cmu.edu/~saswin/" target="_blank">Aswin C. Sankaranarayanan</a>
-                  <br>
-                  <em>IEEE/CVF International Conference on Computer Vision (<strong>ICCV</strong>)</em>, 2019
-                  <font color="orange"><strong>(Oral)</strong></font>
-                  <br>
-                  <a href="https://imaging.cs.cmu.edu/conv_nlos/" target="_blank">[project page]</a>
-                  <a href="https://imaging.cs.cmu.edu/conv_nlos/assets/conv_nlos_iccv.pdf" target="_blank">[paper]</a>
-                  <a href="https://imaging.cs.cmu.edu/conv_nlos/assets/conv_nlos_iccv_supp.pdf"
-                    target="_blank">[supplement]</a>
-                  <a href="data/ahn2019convolutional.bib">[bibtex]</a>
-                  <p></p>
-                  <p>A computationally efficient technique for NLOS imaging based on a derivation that shows the Gram of
-                    the measurement operator is convolutional.</p>
-                </td>
-              </tr>
-
-              <!-- OAVD -->
-              <tr onmouseout="oavd_stop()" onmouseover="oavd_start()">
-                <td style="padding:20px;width:25%;vertical-align:middle">
-                  <div class="one">
-                    <div class="two" id='oavd_image'><img src='images/oavd_after.png'></div>
-                    <img src='images/oavd_before.png'>
-                  </div>
-                  <script type="text/javascript">
-                    function oavd_start() {
-                      document.getElementById('oavd_image').style.opacity = "1";
-                    }
-
-                    function oavd_stop() {
-                      document.getElementById('oavd_image').style.opacity = "0";
-                    }
-                    oavd_stop()
-                  </script>
-                </td>
-                <td style="padding:0px;width:75%;vertical-align:middle">
-                  <a href="https://arxiv.org/pdf/1611.09572.pdf" target="_blank">
-                    <papertitle>Occlusion-Aware Video Deblurring with a New Layered Blur Model</papertitle>
-                  </a>
-                  <br>
-                  <strong>Byeongjoo Ahn</strong>,
-                  <a href="https://sites.google.com/site/lliger9/" target="_blank">Tae Hyun Kim</a>,
-                  <a href="https://cv.snu.ac.kr/wonsik_kim/" target="_blank">Wonsik Kim</a>,
-                  <a href="https://cv.snu.ac.kr/index.php/kmlee/" target="_blank">Kyoung Mu Lee</a>
-                  <br>
-                  <em>Tech report</em>, 2016
-                  <br>
-                  <a href="https://arxiv.org/pdf/1611.09572.pdf" target="_blank">[paper]</a>
-                  <a href="data/ahn2016occlusion.bib">[bibtex]</a>
-                  <br>
-                  <p></p>
-                  <p>Occlusion-aware deblurring method for scenes with occluding objects using a carefully designed
-                    layered blur model that reflects actual blur generation process.</p>
-                </td>
-              </tr>
-
-              <!-- RIP -->
-              <tr onmouseout="rip_stop()" onmouseover="rip_start()">
-                <td style="padding:20px;width:25%;vertical-align:middle">
-                  <div class="one">
-                    <div class="two" id='rip_image'><img src='images/rip_after.png'></div>
-                    <img src='images/rip_before.png'>
-                  </div>
-                  <script type="text/javascript">
-                    function rip_start() {
-                      document.getElementById('rip_image').style.opacity = "1";
-                    }
-
-                    function rip_stop() {
-                      document.getElementById('rip_image').style.opacity = "0";
-                    }
-                    rip_stop()
-                  </script>
-                </td>
-                <td style="padding:0px;width:75%;vertical-align:middle">
-                  <a href="data/rip_sa.pdf" target="_blank">
-                    <papertitle>Reduced Illumination Patterns for Acquisition of Specular and Diffuse Normal Maps
-                    </papertitle>
-                  </a>
-                  <br>
-                  <strong>Byeongjoo Ahn</strong>,
-                  <a href="http://jhcho.info/" target="_blank">Junghyun Cho</a>,
-                  Taekyung Yoo,
-                  <a href="https://sites.google.com/view/ijkim" target="_blank">Ig-Jae Kim</a>
-                  <br>
-                  <em>ACM SIGGRAPH Asia Posters</em>, 2016
-                  <br>
-                  <a href="data/rip_sa.pdf" target="_blank">[paper]</a>
-                  <a href="data/ahn2016reduced.bib">[bibtex]</a>
-                  <p></p>
-                  <p>Acquisition of specular and diffuse normal maps from minimal number of polarized images by removing
-                    the redundancy in four reflectances under XYZ-gradient and constant patterns.</p>
-                </td>
-              </tr>
-
-              <!-- DSD -->
-              <tr onmouseout="dsd_stop()" onmouseover="dsd_start()">
-                <td style="padding:20px;width:25%;vertical-align:middle">
-                  <div class="one">
-                    <div class="two" id='dsd_image'><img src='images/dsd_after.png'></div>
-                    <img src='images/dsd_before.png'>
-                  </div>
-                  <script type="text/javascript">
-                    function dsd_start() {
-                      document.getElementById('dsd_image').style.opacity = "1";
-                    }
-
-                    function dsd_stop() {
-                      document.getElementById('dsd_image').style.opacity = "0";
-                    }
-                    dsd_stop()
-                  </script>
-                </td>
-                <td style="padding:0px;width:75%;vertical-align:middle">
-                  <a href="https://www.cv-foundation.org/openaccess/content_iccv_2013/papers/Kim_Dynamic_Scene_Deblurring_2013_ICCV_paper.pdf"
-                    target="_blank">
-                    <papertitle>Dynamic Scene Deblurring</papertitle>
-                  </a>
-                  <br>
-                  <a href="https://sites.google.com/site/lliger9/" target="_blank">Tae Hyun Kim</a>,
-                  <strong>Byeongjoo Ahn</strong>,
-                  <a href="https://cv.snu.ac.kr/index.php/kmlee/" target="_blank">Kyoung Mu Lee</a>
-                  <br>
-                  <em>IEEE International Conference on Computer Vision (<strong>ICCV</strong>)</em>, 2013
-                  <br>
-                  <a href="https://www.cv-foundation.org/openaccess/content_iccv_2013/papers/Kim_Dynamic_Scene_Deblurring_2013_ICCV_paper.pdf"
-                    target="_blank">[paper]</a>
-                  <a href="data/kim2013dynamic.bib">[bibtex]</a>
-                  <p></p>
-                  <p>Dynamic scene deblurring method estimating the latent image as well as different blur motions and
-                    their soft segmentations jointly.</p>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-
-
-          <!-- SERVICES -->
-          <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
-            <tbody>
-              <tr>
-                <td>
-                  <heading>Professional Activities</heading>
-                  <ul> 
-                    <li><strong>Area Chair, </strong>CVPR <span style="color: gray; font-size: small;">(2026)</span></li>
-                    <li><strong>Area Chair, </strong>ICML <span style="color: gray; font-size: small;">(2025)</span></li>
-                    <li><strong>Area Chair, </strong>NeurIPS <span style="color: gray; font-size: small;">(2024, 2025)</span></li>
-                    <li><strong>Program Committee, </strong>ICCP <span style="color: gray; font-size: small;">(2023, 2024, 2025)</span></li>
-                    <li><strong>Reviewer / Program Committee, </strong>CVPR, ICCV, ECCV, BMVC, ICLR, NeurIPS, SIGGRAPH, SIGGRAPH Asia, ICCP, TIP, TCI</li>
-                    <!-- <li><strong>Volunteer, </strong>Camera Building Workshop as part of Gelfand Outreach Program at CMU
-                      (2019)</li>
-                    <li><strong>Student Volunteer, </strong>ACCV 2012, ICCP 2021</li> -->
-                  </ul>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-
-
-          <!-- TEACHING -->
-          <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
-            <tbody>
-              <tr>
-                <td>
-                  <heading>Teaching</heading>
-                  <ul>
-                    <li>
-                      <strong>Teaching Assistant</strong>,
-                      <a href="http://graphics.cs.cmu.edu/courses/15-463/2020_fall" target="_blank">
-                        15‑463, 15-663, 15-862 Computational Photography</a>, Fall 2020 (CMU)
-                    </li>
-                    <li>
-                      <strong>Teaching Assistant</strong>,
-                      <a href="https://courses.ece.cmu.edu/18290" target="_blank">
-                        18‑290 Signals and Systems</a>, Spring 2019 &amp; Spring 2020 (CMU)
-                    </li>
-                  </ul>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-
-
-
-          <!-- COURSEWORK -->
-          <!-- <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
-            <tbody>
-              <tr>
-                <td>
-                  <heading>Graduate Coursework</heading>
-                  <ul>
-                    <li>16-889 Learning for 3D Vision &nbsp;-&nbsp; Spring 2022</li>
-                    <li>15-868 Physics-based Rendering &nbsp;-&nbsp; Spring 2021</li>
-                    <li>33-353 Intermediate Optics &nbsp;-&nbsp; Fall 2020</li>
-                    <li>15-858 Discrete Differential Geometry &nbsp;-&nbsp; Spring 2020</li>
-                    <li>18-771 Linear Systems &nbsp;-&nbsp; Fall 2019</li>
-                    <li>10-707 Deep Learning &nbsp;-&nbsp; Spring 2019</li>
-                    <li>10-725 Convex Optimization &nbsp;-&nbsp; Fall 2018</li>
-                    <li>16-823 Physics based Methods in Vision &nbsp;-&nbsp; Spring 2018</li>
-                    <li>10-701 Introduction to Machine Learning &nbsp;-&nbsp; Spring 2018</li>
-                    <li>16-720B Computer Vision &nbsp;-&nbsp; Fall 2017</li>
-                    <li>18-793 Image and Video Processing &nbsp;-&nbsp; Fall 2017</li>
-                    <li>36-705 Intermediate Statistics &nbsp;-&nbsp; Fall 2017</li>
-                  </ul>
-                </td>
-              </tr>
-            </tbody>
-          </table> -->
-
-
-          <!-- CREDIT -->
-          <!-- <table
-            style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-            <tbody>
-              <tr>
-                <td style="padding:0px">
-                  <br>
-                  <p style="text-align:right;font-size:small;">
-                    <a href="https://jonbarron.info/" target="_blank">I like this website.</a>
-                  </p>
-                </td>
-              </tr>
-            </tbody>
-          </table> -->
-
-        </td>
-      </tr>
-  </table>
+  <footer class="container footer" role="contentinfo">
+    <p class="muted"></p>
+  </footer>
 </body>
-
 </html>
