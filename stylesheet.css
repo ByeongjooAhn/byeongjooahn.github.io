@@ -152,7 +152,28 @@ body{ padding-top:calc(var(--nav-h) + var(--safe-top)); }
 @supports not (aspect-ratio:1 / 1){ .profile-photo{ height:auto; } }
 
 .hero__text{ display:flex; flex-direction:column; gap:8px; }
-.prose p{ margin:0 0 .7rem; line-height:1.6; text-align:left; hyphens:auto; -webkit-hyphens:auto; overflow-wrap:anywhere; text-wrap:pretty; }
+/* Default (mobile/tablet) — keep current behavior */
+.prose p{
+  margin:0 0 .7rem;
+  line-height:1.6;
+  text-align:left;
+  hyphens:auto;
+  -webkit-hyphens:auto;
+  overflow-wrap:anywhere;
+  text-wrap:pretty;      /* Experimental: keeps nicer wrapping on small screens */
+}
+
+/* Wide desktop only — enforce consistent line breaking across devices */
+@media (min-width: 1200px){
+  .prose p{
+    max-width: 64ch;     /* Fix line width → consistent wrapping regardless of screen */
+    hyphens: none;       /* Disable automatic hyphenation (varies by OS/browser) */
+    -webkit-hyphens: none;
+    overflow-wrap: break-word; /* Prevent overly early breaks */
+    text-wrap: normal;   /* Avoid device-specific pretty wrapping differences */
+  }
+}
+
 
 /* ===== Quick links (icon-only) ===== */
 .links{
