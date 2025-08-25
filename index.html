@@ -134,12 +134,41 @@
           <p>My first name is pronounced as “Be-Young-Joo.”</p>
         </div>
 
-        <!-- Quick links (CV removed to avoid duplication with navbar) -->
+        <!-- Quick links (icon-only, inline SVG — no external libs) -->
         <nav class="links" aria-label="Quick links">
-          <a href="mailto:bjahn11@gmail.com">Email</a><span aria-hidden="true">·</span>
-          <a href="https://scholar.google.com/citations?user=sIMyihQAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Google Scholar</a><span aria-hidden="true">·</span>
-          <a href="https://www.linkedin.com/in/byeongjoo-ahn-73b23475/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <!-- Email -->
+          <a href="mailto:bjahn11@gmail.com" aria-label="Email" title="Email">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M20 5H4a2 2 0 0 0-2 2v10c0 1.1.9 2 2 2h16a2 2 0 0 0 2-2V7c0-1.1-.9-2-2-2Zm0 3.2-8 5-8-5V7l8 5 8-5v1.2Z" fill="currentColor"/>
+            </svg>
+          </a>
+
+          <!-- Google Scholar -->
+          <a href="https://scholar.google.com/citations?user=sIMyihQAAAAJ&hl=en"
+            target="_blank" rel="noopener noreferrer" aria-label="Google Scholar" title="Google Scholar">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 3 2 8l10 5 8-4v6h2V8l-10-5Zm-6 9v4c0 2.2 3 4 6 4s6-1.8 6-4v-4l-6 3-6-3Z" fill="currentColor"/>
+            </svg>
+          </a>
+
+          <!-- LinkedIn -->
+          <a href="https://www.linkedin.com/in/byeongjoo-ahn-73b23475/"
+            target="_blank" rel="noopener noreferrer"
+            aria-label="LinkedIn" title="LinkedIn">
+            <svg viewBox="0 0 448 512" aria-hidden="true">
+              <!-- outline square -->
+              <rect x="16" y="16" width="416" height="480" rx="64"/>
+              <!-- "in" glyph -->
+              <path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8
+                      A53.79 53.79 0 0 1 107.6 53.8c0 29.7-24.09 54.3-53.81 54.3zM447.9 448h-92.4
+                      V304.1c0-34.3-12.2-57.6-42.7-57.6-23.3 0-37.2 15.6-43.3 30.7-2.2 5.3-2.8 12.7-2.8
+                      20.1V448h-92.4s1.2-270.2 0-299.1h92.4v42.4c12.3-19 34.4-46 83.6-46
+                      61 0 106.8 39.8 106.8 125.3V448z"/>
+            </svg>
+          </a>
         </nav>
+
+
       </div>
 
       <!-- right -->
