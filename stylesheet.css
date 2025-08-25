@@ -102,34 +102,21 @@ body{ padding-top:calc(var(--nav-h) + var(--safe-top)); }
 .nav__links a{ color:inherit; opacity:.92; white-space:nowrap; }
 .nav__links a:hover,.nav__links a:focus{ opacity:1; text-decoration:underline; text-underline-offset:3px; }
 
-/* Compact hamburger layout (tighter bar spacing) */
 .nav__toggle{
-  display:none;               /* desktop hidden — keep as is on mobile media query */
+  display:none;
   width:40px; height:32px; border:0; border-radius:10px;
   background:transparent; padding:0; margin:0; cursor:pointer; line-height:0;
-
-  /* ↓ tighten vertical spacing */
-  gap:3px;                    /* was 4–5px */
+  gap:3px; /* tighter spacing */
 }
-
 .nav__toggle-bar{
-  display:block;
-  width:20px;                 /* was 22px → slightly shorter */
-  height:2px;
-  background:currentColor;
-  border-radius:2px;
+  display:block; width:20px; height:2px; background:currentColor; border-radius:2px;
 }
-
-/* remove extra vertical margin between bars; use the gap instead */
 .nav__toggle-bar + .nav__toggle-bar{ margin-top:0; }
-
-/* Optional: subtle hover feedback */
-.nav__toggle:hover .nav__toggle-bar{ opacity:.85; }
 
 @media (max-width:720px){
   .nav__toggle{
     display:flex;
-    flex-direction:column; justify-content:center; align-items:center; gap:4px;
+    flex-direction:column; justify-content:center; align-items:center;
   }
   .nav__links{
     position:absolute; left:0; right:0; top:calc(var(--nav-h) + var(--safe-top));
@@ -167,23 +154,6 @@ body{ padding-top:calc(var(--nav-h) + var(--safe-top)); }
 .hero__text{ display:flex; flex-direction:column; gap:8px; }
 .prose p{ margin:0 0 .7rem; line-height:1.6; text-align:left; hyphens:auto; -webkit-hyphens:auto; overflow-wrap:anywhere; text-wrap:pretty; }
 
-@media (max-width:860px){
-  .hero{
-    grid-template-columns:1fr;
-    grid-template-areas:
-      "photo"
-      "text";
-    row-gap:14px;
-    gap:14px;
-  }
-  .hero__photo{
-    grid-area:photo;
-    width:auto; max-width:180px;
-    justify-self:center; margin-top:2px;
-  }
-  .hero__text{ grid-area:text; }
-}
-
 /* ===== Quick links (icon-only) ===== */
 .links{
   display:flex;
@@ -211,7 +181,6 @@ body{ padding-top:calc(var(--nav-h) + var(--safe-top)); }
 .links a:focus{
   background:rgba(0,0,0,0.06);
   color:var(--link);
-  transform:scale(1.1);
 }
 @media (prefers-color-scheme: dark){
   .links a:hover,
@@ -219,6 +188,31 @@ body{ padding-top:calc(var(--nav-h) + var(--safe-top)); }
     background:rgba(255,255,255,0.08);
     color:var(--link-hover);
   }
+}
+
+/* ===== Mobile hero layout (photo → links → text) ===== */
+@media (max-width: 860px){
+  .hero{
+    display:grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "photo"
+      "links"
+      "text";
+    row-gap: 12px;
+  }
+
+  .hero__photo{
+    grid-area: photo;
+    justify-self:center;
+    width:auto; max-width:180px;
+    margin-top:2px;
+  }
+
+  .hero__text{ display: contents; }
+
+  .links{ grid-area: links; margin-top:8px; }
+  .prose{ grid-area: text; }
 }
 
 /* ===== Sections ===== */
