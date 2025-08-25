@@ -31,7 +31,7 @@
   <link rel="icon" sizes="32x32" href="https://imaging.cs.cmu.edu/wp-content/uploads/2020/10/favicon.png">
   <link rel="apple-touch-icon" href="https://imaging.cs.cmu.edu/wp-content/uploads/2020/10/favicon.png">
 
-  <!-- Fonts (system-first; Inter optional) -->
+  <!-- Fonts (system-first; Inter fallback) -->
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
@@ -39,7 +39,7 @@
   <!-- Styles -->
   <link rel="stylesheet" href="stylesheet.css" />
 
-  <!-- JSON-LD -->
+  <!-- JSON-LD: Person -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
@@ -60,6 +60,8 @@
     ]
   }
   </script>
+
+  <!-- JSON-LD: WebSite (for sitelinks) -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
@@ -93,13 +95,13 @@
             I received my PhD from
             <a href="https://www.cmu.edu/" target="_blank" rel="noopener noreferrer">Carnegie Mellon University</a>,
             where I was advised by
-            <a href="https://users.ece.cmu.edu/~saswin/" target="_blank" rel="noopener noreferrer">Aswin C. Sankaranarayanan</a>
+            <span data-author="Aswin C. Sankaranarayanan">Aswin C. Sankaranarayanan</span>
             and
-            <a href="https://www.cs.cmu.edu/~igkioule/" target="_blank" rel="noopener noreferrer">Ioannis Gkioulekas</a>.
+            <span data-author="Ioannis Gkioulekas">Ioannis Gkioulekas</span>.
             Prior to that, I earned my BS and MS degrees from
             <a href="https://en.snu.ac.kr/" target="_blank" rel="noopener noreferrer">Seoul National University</a>,
             where I worked with
-            <a href="https://cv.snu.ac.kr/index.php/kmlee/" target="_blank" rel="noopener noreferrer">Kyoung Mu Lee</a>.
+            <span data-author="Kyoung Mu Lee">Kyoung Mu Lee</span>.
             Additionally, I worked as a research scientist at the
             <a href="https://kist.re.kr" target="_blank" rel="noopener noreferrer">Korea Institute of Science and Technology</a>.
           </p>
@@ -115,7 +117,7 @@
       </div>
 
       <!-- right -->
-     <div class="hero__photo">
+      <div class="hero__photo">
         <a href="images/ByeongjooAhn.jpg">
           <img
             class="profile-photo"
@@ -151,14 +153,14 @@
               </a>
             </p>
             <p class="authors">
-              <strong>Byeongjoo Ahn</strong>,
-              <a href="https://karreny.github.io" target="_blank" rel="noopener noreferrer">Karren Yang</a>,
-              <a href="https://www.brianhamilton.co" target="_blank" rel="noopener noreferrer">Brian Hamilton</a>,
-              <a href="https://www.linkedin.com/in/jsheaffer/" target="_blank" rel="noopener noreferrer">Jonathan Sheaffer</a>,
-              <a href="https://anuragranj.github.io" target="_blank" rel="noopener noreferrer">Anurag Ranjan</a>,
-              <a href="https://scholar.google.co.uk/citations?user=U2mA-EAAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Miguel Sarabia</a>,
-              <a href="https://www.onceltuzel.net" target="_blank" rel="noopener noreferrer">Oncel Tuzel</a>,
-              <a href="https://rick-chang.github.io" target="_blank" rel="noopener noreferrer">Jen-Hao Rick Chang</a>
+              <strong data-author="Byeongjoo Ahn">Byeongjoo Ahn</strong>,
+              <span data-author="Karren Yang">Karren Yang</span>,
+              <span data-author="Brian Hamilton">Brian Hamilton</span>,
+              <span data-author="Jonathan Sheaffer">Jonathan Sheaffer</span>,
+              <span data-author="Anurag Ranjan">Anurag Ranjan</span>,
+              <span data-author="Miguel Sarabia">Miguel Sarabia</span>,
+              <span data-author="Oncel Tuzel">Oncel Tuzel</span>,
+              <span data-author="Jen-Hao Rick Chang">Jen-Hao Rick Chang</span>
             </p>
             <p class="venue">
               <em><strong>Interspeech</strong></em><span class="upright">, 2024</span>
@@ -185,10 +187,10 @@
               <a href="data/neural_kaleidoscopic_cvpr2023.pdf" target="_blank" rel="noopener noreferrer">Neural Kaleidoscopic Space Sculpting</a>
             </p>
             <p class="authors">
-              <strong>Byeongjoo Ahn</strong>, 
-              <a href="https://www.linkedin.com/in/michael-de-zeeuw/" target="_blank" rel="noopener noreferrer">Michael De Zeeuw</a>,
-              <a href="https://www.cs.cmu.edu/~igkioule/" target="_blank" rel="noopener noreferrer">Ioannis Gkioulekas</a>,
-              <a href="https://users.ece.cmu.edu/~saswin/" target="_blank" rel="noopener noreferrer">Aswin C. Sankaranarayanan</a>
+              <strong data-author="Byeongjoo Ahn">Byeongjoo Ahn</strong>,
+              <span data-author="Michael De Zeeuw">Michael De Zeeuw</span>,
+              <span data-author="Ioannis Gkioulekas">Ioannis Gkioulekas</span>,
+              <span data-author="Aswin C. Sankaranarayanan">Aswin C. Sankaranarayanan</span>
             </p>
             <p class="venue">
               <em>IEEE/CVF Conference on Computer Vision and Pattern Recognition </em>
@@ -221,9 +223,9 @@
               </a>
             </p>
             <p class="authors">
-              <strong>Byeongjoo Ahn</strong>,
-              <a href="https://www.cs.cmu.edu/~igkioule/" target="_blank" rel="noopener noreferrer">Ioannis Gkioulekas</a>,
-              <a href="https://users.ece.cmu.edu/~saswin/" target="_blank" rel="noopener noreferrer">Aswin C. Sankaranarayanan</a>
+              <strong data-author="Byeongjoo Ahn">Byeongjoo Ahn</strong>,
+              <span data-author="Ioannis Gkioulekas">Ioannis Gkioulekas</span>,
+              <span data-author="Aswin C. Sankaranarayanan">Aswin C. Sankaranarayanan</span>
             </p>
             <p class="venue">
               <em>ACM Transactions on Graphics (Proc. <strong>SIGGRAPH Asia</strong></em><span class="upright">), 2021</span>
@@ -253,16 +255,16 @@
               </a>
             </p>
             <p class="authors">
-              <strong>Byeongjoo Ahn</strong>,
-              <a href="https://ad74.blogs.rice.edu/" target="_blank" rel="noopener noreferrer">Akshat Dave</a>,
-              <a href="https://computationalimaging.rice.edu/team/ashok-veeraraghavan/" target="_blank" rel="noopener noreferrer">Ashok Veeraraghavan</a>,
-              <a href="https://www.cs.cmu.edu/~igkioule/" target="_blank" rel="noopener noreferrer">Ioannis Gkioulekas</a>,
-              <a href="https://users.ece.cmu.edu/~saswin/" target="_blank" rel="noopener noreferrer">Aswin C. Sankaranarayanan</a>
+              <strong data-author="Byeongjoo Ahn">Byeongjoo Ahn</strong>,
+              <span data-author="Akshat Dave">Akshat Dave</span>,
+              <span data-author="Ashok Veeraraghavan">Ashok Veeraraghavan</span>,
+              <span data-author="Ioannis Gkioulekas">Ioannis Gkioulekas</span>,
+              <span data-author="Aswin C. Sankaranarayanan">Aswin C. Sankaranarayanan</span>
             </p>
             <p class="venue">
               <em>IEEE/CVF International Conference on Computer Vision </em>
               <span class="upright">(<strong>ICCV</strong>), 2019</span>
-              <span class="upright">(<strong>Oral</strong>)</span>
+              <span class="upright bold">(Oral)</span>
             </p>
             <p class="links-line">
               <a href="https://imaging.cs.cmu.edu/conv_nlos/" target="_blank" rel="noopener noreferrer">project page</a> ·
@@ -289,10 +291,10 @@
               </a>
             </p>
             <p class="authors">
-              <strong>Byeongjoo Ahn</strong>,
-              <a href="https://sites.google.com/site/lliger9/" target="_blank" rel="noopener noreferrer">Tae Hyun Kim</a>,
-              <a href="https://cv.snu.ac.kr/wonsik_kim/" target="_blank" rel="noopener noreferrer">Wonsik Kim</a>,
-              <a href="https://cv.snu.ac.kr/index.php/kmlee/" target="_blank" rel="noopener noreferrer">Kyoung Mu Lee</a>
+              <strong data-author="Byeongjoo Ahn">Byeongjoo Ahn</strong>,
+              <span data-author="Tae Hyun Kim">Tae Hyun Kim</span>,
+              <span data-author="Wonsik Kim">Wonsik Kim</span>,
+              <span data-author="Kyoung Mu Lee">Kyoung Mu Lee</span>
             </p>
             <p class="venue"><em>Tech report</em><span class="upright">, 2016</span></p>
             <p class="links-line">
@@ -318,8 +320,10 @@
               </a>
             </p>
             <p class="authors">
-              <strong>Byeongjoo Ahn</strong>, <a href="http://jhcho.info/" target="_blank" rel="noopener noreferrer">Junghyun Cho</a>,
-              Taekyung Yoo, <a href="https://sites.google.com/view/ijkim" target="_blank" rel="noopener noreferrer">Ig-Jae Kim</a>
+              <strong data-author="Byeongjoo Ahn">Byeongjoo Ahn</strong>,
+              <span data-author="Junghyun Cho">Junghyun Cho</span>,
+              <span data-author="Taekyung Yoo">Taekyung Yoo</span>,
+              <span data-author="Ig-Jae Kim">Ig-Jae Kim</span>
             </p>
             <p class="venue"><em>ACM SIGGRAPH Asia Posters</em><span class="upright">, 2016</span></p>
             <p class="links-line">
@@ -345,9 +349,9 @@
               </a>
             </p>
             <p class="authors">
-              <a href="https://sites.google.com/site/lliger9/" target="_blank" rel="noopener noreferrer">Tae Hyun Kim</a>,
-              <strong>Byeongjoo Ahn</strong>,
-              <a href="https://cv.snu.ac.kr/index.php/kmlee/" target="_blank" rel="noopener noreferrer">Kyoung Mu Lee</a>
+              <span data-author="Tae Hyun Kim">Tae Hyun Kim</span>,
+              <strong data-author="Byeongjoo Ahn">Byeongjoo Ahn</strong>,
+              <span data-author="Kyoung Mu Lee">Kyoung Mu Lee</span>
             </p>
             <p class="venue">
               <em>IEEE International Conference on Computer Vision </em>
@@ -360,6 +364,7 @@
             <p class="summary">Joint estimation of latent image, motion, and soft segmentation for dynamic scenes.</p>
           </div>
         </li>
+
       </ul>
     </section>
 
@@ -387,9 +392,83 @@
     <p class="muted"></p>
   </footer>
 
+  <!-- Author dictionary -->
+  <script id="author-map" type="application/json">
+  {
+    "Byeongjoo Ahn": null,
+    "Karren Yang": "https://karreny.github.io",
+    "Brian Hamilton": "https://www.brianhamilton.co",
+    "Jonathan Sheaffer": "https://www.linkedin.com/in/jsheaffer/",
+    "Anurag Ranjan": "https://anuragranj.github.io",
+    "Miguel Sarabia": "https://scholar.google.co.uk/citations?user=U2mA-EAAAAAJ&hl=en",
+    "Oncel Tuzel": "https://www.onceltuzel.net",
+    "Jen-Hao Rick Chang": "https://rick-chang.github.io",
+    "Michael De Zeeuw": "https://www.linkedin.com/in/michael-de-zeeuw/",
+    "Ioannis Gkioulekas": "https://www.cs.cmu.edu/~igkioule/",
+    "Aswin C. Sankaranarayanan": "https://users.ece.cmu.edu/~saswin/",
+    "Akshat Dave": "https://akshatdave.github.io/",
+    "Ashok Veeraraghavan": "https://computationalimaging.rice.edu/team/ashok-veeraraghavan/",
+    "Tae Hyun Kim": "https://sites.google.com/view/lliger9/team/taehyunkim?authuser=0",
+    "Wonsik Kim": "https://www.linkedin.com/in/wnsk-km/",
+    "Kyoung Mu Lee": "https://cv.snu.ac.kr/index.php/kmlee/",
+    "Junghyun Cho": "https://junghyuncho.notion.site/Junghyun-Cho-36f85eff362148dab9e23e6628fe3551",
+    "Taekyung Yoo": "https://www.virtualinteraction.kr/member/professor",
+    "Ig-Jae Kim": "https://sites.google.com/view/ijkim"
+  }
+  </script>
+
+  <!-- Linkify authors -->
+  <script>
+  /* Linkify any [data-author] using the #author-map dictionary */
+  (function () {
+    function norm(s){ return (s||'').toLowerCase().replace(/\s+/g,' ').trim(); }
+
+    function linkifyAuthors(){
+      const dictNode = document.getElementById('author-map');
+      if (!dictNode) return;
+
+      let raw = {};
+      try { raw = JSON.parse(dictNode.textContent.trim()); }
+      catch(e){ console.error('author-map JSON parse error:', e); return; }
+
+      const map = {};
+      Object.keys(raw).forEach(k => { map[norm(k)] = raw[k]; });
+
+      document.querySelectorAll('[data-author]').forEach(el => {
+        const nameAttr = el.getAttribute('data-author');
+        const name = (nameAttr && nameAttr.trim()) || (el.textContent || '').trim();
+        const url = map[norm(name)];
+
+        // no url or already inside a link → skip
+        if (!url || el.closest('a')) return;
+
+        const a = document.createElement('a');
+        a.href = url;
+        a.target = '_blank';
+        a.rel = 'noopener noreferrer';
+        a.textContent = el.textContent;
+
+        if (el.tagName.toLowerCase() === 'strong') {
+          const strong = document.createElement('strong');
+          strong.appendChild(a);
+          el.replaceWith(strong);
+        } else {
+          el.replaceWith(a);
+        }
+      });
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', linkifyAuthors, { once:true });
+    } else {
+      linkifyAuthors();
+    }
+  })();
+  </script>
+
+
   <!-- Tap-to-preview script -->
   <script>
-    // Global tap-to-preview: first tap previews, second tap navigates (touch-only)
     (function () {
       const isTouchOnly = window.matchMedia('(hover: none)').matches;
       if (!isTouchOnly) return; // keep desktop hover behavior
