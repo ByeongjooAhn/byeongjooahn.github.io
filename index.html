@@ -459,7 +459,7 @@
 
   <footer class="container footer" role="contentinfo">
     <p class="muted">
-      © 2025 Byeongjoo Ahn · Inspired by 
+      © <span id="year"></span> Byeongjoo Ahn · Inspired by 
       <a href="https://jonbarron.info/" target="_blank" rel="noopener noreferrer">this page</a>
     </p>
   </footer>
@@ -634,6 +634,10 @@
     window.addEventListener('resize', onScroll);
     onScroll();
   })();
+  </script>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
