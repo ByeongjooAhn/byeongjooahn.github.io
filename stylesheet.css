@@ -50,6 +50,8 @@ html, body {
   padding: 0;
   font-size: 14px;
   text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  font-synthesis-weight: none;
 }
 
 a { color: var(--link); text-decoration: none; }
@@ -189,7 +191,7 @@ a:hover, a:focus { color: var(--link-hover); }
   grid-template-columns: var(--thumb) 1fr;
   gap: 14px;
   padding: 2px 0;
-  align-items: center;   /* center-align image and text vertically */
+  align-items: center; /* center-align image and text vertically */
 }
 @media (max-width:740px) {
   .pub-card {
@@ -286,10 +288,6 @@ a:hover, a:focus { color: var(--link-hover); }
 /* summary: removed — if any remain, hide them */
 .summary { display: none !important; }
 
-/* .venue + .links-line {
-  margin-top: 16px; 
-} */
-
 /* Other lists */
 .simple-list {
   list-style: none;
@@ -310,3 +308,6 @@ a:hover, a:focus { color: var(--link-hover); }
   color: var(--muted);
   font-size: 12.5px;
 }
+
+/* ===== Mobile Tap-to-preview support ===== */
+.pub-card__media.preview img.after { opacity: 1; }
