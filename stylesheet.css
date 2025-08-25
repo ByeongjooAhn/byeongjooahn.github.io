@@ -275,7 +275,7 @@ body{ padding-top:calc(var(--nav-h) + var(--safe-top)); }
 .muted{ color:var(--muted); }
 
 .footer{ padding:20px 0 28px; text-align:center; }
-.footer p{ margin:0; color:var(--muted); font-size:12.5px; }
+.footer p{ margin:0; color:var(--muted); font-size:11px; }
 
 .pub-card__media.preview img.after{ opacity:1; }
 
