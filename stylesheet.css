@@ -136,7 +136,7 @@ body{ padding-top:calc(var(--nav-h) + var(--safe-top)); }
 .hero{
   display:grid;
   grid-template-columns: 1fr max-content;
-  gap:32px;
+  gap:40px;
   align-items:start;
 }
 .hero__photo{
