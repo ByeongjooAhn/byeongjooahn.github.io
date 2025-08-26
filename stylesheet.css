@@ -120,37 +120,84 @@ body{ padding-top:calc(var(--nav-h) + var(--safe-top)); }
 @media (max-width:720px){
   .nav__toggle{
     display:flex;
-    flex-direction:column; justify-content:center; align-items:center;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
   }
+
   .nav__links{
     position:absolute;
-    left:0; right:0;                               /* full-width panel */
+    left:0; right:0;
     top:calc(var(--nav-h) + var(--safe-top));
-    display:grid; gap:10px;
-    background:var(--nav-backdrop);
-    border-bottom:1px solid var(--nav-border);
+    display:grid;
+    gap:14px; /* spacious gap between items */
 
-    /* keep text from going beyond the hamburger/X visual edge */
-    /* Right padding = container pad + a bit of clearance */
-    padding:12px calc(var(--container-pad) + 8px) 14px var(--container-pad);
+    /* translucent backdrop with subtle border */
+    background:var(--nav-backdrop);
+    -webkit-backdrop-filter:saturate(180%) blur(12px);
+    backdrop-filter:saturate(180%) blur(12px);
+    border-bottom:1px solid color-mix(in srgb, var(--nav-border) 70%, transparent);
+
+    /* safe-area padding for notches etc. */
+    padding:
+      14px
+      calc(var(--container-pad) + 12px)
+      16px
+      max(var(--container-pad), env(safe-area-inset-left));
 
     transform:translateY(-12px);
-    opacity:0; pointer-events:none;
-    transition:transform .18s ease, opacity .18s ease;
+    opacity:0; 
+    pointer-events:none;
+    transition:
+      transform .22s cubic-bezier(.32,.72,0,1),
+      opacity   .22s ease;
+    will-change:transform, opacity;
 
-    justify-items:end;                             /* align items to the right */
-    text-align:right;                              /* right-align link text   */
+    justify-items:end;   /* align menu items to the right */
+    text-align:right;    /* right-align link text */
   }
 
   .nav__links.is-open{
     transform:translateY(0);
-    opacity:1; pointer-events:auto;
+    opacity:1; 
+    pointer-events:auto;
   }
 
-  /* Make each link a block with a comfortable tap target (~44px) */
   .nav__links a{
     display:block;
-    padding:16px 0;                                
+    padding:18px 0;       /* generous tap target (~50px tall) */
+    min-height:44px;      /* ensures accessibility minimum */
+    line-height:1.6;      /* comfortable text spacing */
+    letter-spacing:.01em; /* subtle refinement like SF fonts */
+    font-weight:500;      /* clear but not too bold */
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    text-decoration:none;
+  }
+
+  /* subtle tactile feedback on tap */
+  .nav__links a:active{
+    opacity:.72;
+    transform:translateY(0.5px);
+    transition:opacity .12s ease, transform .12s ease;
+  }
+
+  /* clear focus ring for keyboard users */
+  .nav__links a:focus-visible{
+    outline:2px solid color-mix(in srgb, var(--nav-border) 80%, transparent);
+    outline-offset:4px;
+    border-radius:6px;
+  }
+
+  /* hairline divider between items */
+  .nav__links a + a{
+    border-top:1px solid color-mix(in srgb, var(--nav-border) 65%, transparent);
+    padding-top: calc(18px + 1px); /* compensate divider thickness */
+  }
+
+  /* respect user’s reduced motion preference */
+  @media (prefers-reduced-motion: reduce){
+    .nav__links{ transition:none; }
+    .nav__links a:active{ transform:none; }
   }
 }
 
