@@ -150,7 +150,7 @@ body{ padding-top:calc(var(--nav-h) + var(--safe-top)); }
   /* Make each link a block with a comfortable tap target (~44px) */
   .nav__links a{
     display:block;
-    padding:14px 0;                                /* ~44px with 14px font */
+    padding:16px 0;                                
   }
 }
 
