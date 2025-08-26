@@ -188,12 +188,6 @@ body{ padding-top:calc(var(--nav-h) + var(--safe-top)); }
     border-radius:6px;
   }
 
-  /* hairline divider between items */
-  .nav__links a + a{
-    border-top:1px solid color-mix(in srgb, var(--nav-border) 65%, transparent);
-    padding-top: calc(18px + 1px); /* compensate divider thickness */
-  }
-
   /* respect user’s reduced motion preference */
   @media (prefers-reduced-motion: reduce){
     .nav__links{ transition:none; }
