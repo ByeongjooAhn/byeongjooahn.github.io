@@ -14,6 +14,9 @@
   --nav-border:rgba(60,60,67,.14);
 
   --safe-top: env(safe-area-inset-top, 0px);
+
+  --container-pad: 18px;   /* same as .container side padding */
+  --toggle-w: 40px;        /* hamburger/X button width */
 }
 
 /* Dark mode */
@@ -102,11 +105,12 @@ body{ padding-top:calc(var(--nav-h) + var(--safe-top)); }
 .nav__links a{ color:inherit; opacity:.92; white-space:nowrap; }
 .nav__links a:hover,.nav__links a:focus{ opacity:1; text-decoration:underline; text-underline-offset:3px; }
 
+/* Hamburger toggle (hidden on desktop) */
 .nav__toggle{
   display:none;
   width:40px; height:32px; border:0; border-radius:10px;
   background:transparent; padding:0; margin:0; cursor:pointer; line-height:0;
-  gap:3px; /* tighter spacing */
+  gap:3px;
 }
 .nav__toggle-bar{
   display:block; width:20px; height:2px; background:currentColor; border-radius:2px;
@@ -119,15 +123,35 @@ body{ padding-top:calc(var(--nav-h) + var(--safe-top)); }
     flex-direction:column; justify-content:center; align-items:center;
   }
   .nav__links{
-    position:absolute; left:0; right:0; top:calc(var(--nav-h) + var(--safe-top));
+    position:absolute;
+    left:0; right:0;                               /* full-width panel */
+    top:calc(var(--nav-h) + var(--safe-top));
     display:grid; gap:10px;
     background:var(--nav-backdrop);
     border-bottom:1px solid var(--nav-border);
-    padding:12px 18px 14px;
-    transform:translateY(-12px); opacity:0; pointer-events:none;
+
+    /* keep text from going beyond the hamburger/X visual edge */
+    /* Right padding = container pad + a bit of clearance */
+    padding:12px calc(var(--container-pad) + 8px) 14px var(--container-pad);
+
+    transform:translateY(-12px);
+    opacity:0; pointer-events:none;
     transition:transform .18s ease, opacity .18s ease;
+
+    justify-items:end;                             /* align items to the right */
+    text-align:right;                              /* right-align link text   */
   }
-  .nav__links.is-open{ transform:translateY(0); opacity:1; pointer-events:auto; }
+
+  .nav__links.is-open{
+    transform:translateY(0);
+    opacity:1; pointer-events:auto;
+  }
+
+  /* Make each link a block with a comfortable tap target (~44px) */
+  .nav__links a{
+    display:block;
+    padding:14px 0;                                /* ~44px with 14px font */
+  }
 }
 
 /* ===== Hero ===== */
@@ -136,29 +160,25 @@ body{ padding-top:calc(var(--nav-h) + var(--safe-top)); }
 /* Safer grid for Safari */
 .hero{
   display: grid;
-  grid-template-columns: 1fr auto;       /* was: 1fr max-content */
+  grid-template-columns: 1fr auto;
   gap: 40px;
   align-items: start;
 }
 
-/* Control the right column width explicitly */
 .hero__photo{
   justify-self: end;
   display: flex;
   align-items: flex-end;
-  width: auto;                           /* let content define width */
-  max-width: var(--photo);               /* cap width via your token */
+  width: auto;
+  max-width: var(--photo);
 }
-
-/* Make the image size the column consistently */
 .hero__photo img{
   display: block;
   width: 100%;
   height: auto;
-  max-width: var(--photo);               /* belt & suspenders */
+  max-width: var(--photo);
 }
 
-/* (Optional) If you prefer to guarantee the column never exceeds --photo */
 @media (min-width: 720px){
   .hero{
     grid-template-columns: 1fr minmax(auto, var(--photo));
@@ -172,7 +192,6 @@ body{ padding-top:calc(var(--nav-h) + var(--safe-top)); }
 @supports not (aspect-ratio:1 / 1){ .profile-photo{ height:auto; } }
 
 .hero__text{ display:flex; flex-direction:column; gap:8px; }
-/* Default (mobile/tablet) — keep current behavior */
 .prose p{
   margin:0 0 .7rem;
   line-height:1.6;
@@ -180,20 +199,17 @@ body{ padding-top:calc(var(--nav-h) + var(--safe-top)); }
   hyphens:auto;
   -webkit-hyphens:auto;
   overflow-wrap:anywhere;
-  text-wrap:pretty;      /* Experimental: keeps nicer wrapping on small screens */
+  text-wrap:pretty;
 }
-
-/* Wide desktop only — enforce consistent line breaking across devices */
 @media (min-width: 1200px){
   .prose p{
-    max-width: 45em;        /* 1em = font size, so stable across devices */
-    hyphens: none; 
+    max-width: 45em;
+    hyphens: none;
     -webkit-hyphens: none;
     overflow-wrap: break-word;
     text-wrap: normal;
   }
 }
-
 
 /* ===== Quick links (icon-only) ===== */
 .links{
@@ -217,7 +233,6 @@ body{ padding-top:calc(var(--nav-h) + var(--safe-top)); }
 }
 .links a svg path{ fill: currentColor; }
 .links a svg rect{ fill:none; stroke:currentColor; stroke-width:1.6; }
-
 .links a:hover,
 .links a:focus{
   background:rgba(0,0,0,0.06);
@@ -232,7 +247,7 @@ body{ padding-top:calc(var(--nav-h) + var(--safe-top)); }
   }
 }
 
-/* ===== Mobile hero layout (photo → links → text) ===== */
+/* ===== Mobile hero layout ===== */
 @media (max-width: 860px){
   .hero{
     display:grid;
@@ -243,16 +258,13 @@ body{ padding-top:calc(var(--nav-h) + var(--safe-top)); }
       "text";
     row-gap: 12px;
   }
-
   .hero__photo{
     grid-area: photo;
     justify-self:center;
     width:auto; max-width:180px;
     margin-top:2px;
   }
-
   .hero__text{ display: contents; }
-
   .links{ grid-area: links; margin-top:8px; }
   .prose{ grid-area: text; }
 }
@@ -291,7 +303,6 @@ body{ padding-top:calc(var(--nav-h) + var(--safe-top)); }
 
 .pub-card__body{ display:grid; row-gap:4px; }
 .pub-card__body > *{ margin:0; }
-
 .papertitle{ font-weight:700; font-size:15.5px; line-height:1.35; letter-spacing:-.003em; }
 .papertitle a{ color:var(--link); }
 .papertitle a:hover{ color:var(--link-hover); }
@@ -303,13 +314,11 @@ body{ padding-top:calc(var(--nav-h) + var(--safe-top)); }
 
 .venue{ font-size:13.9px; line-height:1.35; color:#222; font-style:italic; }
 @media (prefers-color-scheme: dark){ .venue{ color:#e5e5e5; } }
-
 .upright{ font-style:normal; }
 .bold{ font-weight:700; }
 
 .links-line{ font-size:13.6px; line-height:1.35; color:#222; }
 @media (prefers-color-scheme: dark){ .links-line{ color:#e5e5e5; } }
-
 .summary{ display:none !important; }
 
 .simple-list{ list-style:none; padding:0; margin:0; display:grid; gap:6px; }
@@ -340,15 +349,48 @@ body{ padding-top:calc(var(--nav-h) + var(--safe-top)); }
   a{ color:inherit; text-decoration:underline; }
 }
 
+/* Inline icon alignment */
 .inline-icon {
   width:14px;
   height:14px;
   vertical-align:text-bottom;
-  margin:0 0 0 0; 
+  margin:0;
   fill: currentColor; 
 }
 
+/* Desktop-only line break helper */
 .desktop-break { display: none; }
-@media (min-width: 1024px){ /* desktop threshold */
+@media (min-width: 1024px){
   .desktop-break { display: inline; }
+}
+
+/* Hamburger → X animation */
+.nav__toggle {
+  position: relative;
+  /* display: flex; */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 40px;
+  height: 32px;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+.nav__toggle-bar {
+  width: 20px;
+  height: 2px;
+  background: currentColor;
+  border-radius: 2px;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+.nav__toggle[aria-expanded="true"] .nav__toggle-bar:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.nav__toggle[aria-expanded="true"] .nav__toggle-bar:nth-child(2) {
+  opacity: 0;
+}
+.nav__toggle[aria-expanded="true"] .nav__toggle-bar:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
 }
