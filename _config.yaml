@@ -5,9 +5,3 @@ baseurl: ""                             # User site => keep empty
 # Enable official plugin supported by GitHub Pages
 plugins:
   - jekyll-sitemap                      # Auto-generates /sitemap.xml at build time
-
-# Optional: exclude local/development files from the build
-exclude:
-  - Gemfile
-  - Gemfile.lock
-  - node_modules
