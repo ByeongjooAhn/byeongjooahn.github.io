@@ -1,0 +1,37 @@
+# Byeongjoo Ahn (안병주)
+
+> Byeongjoo Ahn is a research scientist at Apple in Seattle, working on image and video generation foundation models for Apple Intelligence. Research interests span computer vision, computer graphics, and computational imaging, with a focus on generative models and representations for image, video, audio, and 3D content. Byeongjoo holds a PhD in Electrical and Computer Engineering from Carnegie Mellon University (2023), advised by Aswin C. Sankaranarayanan and Ioannis Gkioulekas, and BS and MS degrees from Seoul National University (advisor: Kyoung Mu Lee).
+
+- Current role: Research Scientist, Apple (Seattle, WA), since January 2024, working on image and video generation foundation models for Apple Intelligence ([blog post](https://machinelearning.apple.com/research/introducing-third-generation-of-apple-foundation-models))
+- Previously: Research Scientist, Center for Imaging Media Research, Korea Institute of Science and Technology (KIST), 2014–2017; research intern with Apple Machine Learning Research (2023) and the Snap Inc. Computational Imaging Group (2020)
+- PhD thesis: Full-surround 3D Reconstruction using Kaleidoscopes (Carnegie Mellon University, 2023)
+- Service: Area Chair for CVPR 2026–2027, ICLR 2027, NeurIPS 2024–2026, and ICML 2025; Program Committee for ICCP 2023–2026; Top Area Chair, NeurIPS 2025
+- Pronunciation: first name is pronounced "Be-Young-Joo"
+
+## Pages
+
+- [Home](https://byeongjooahn.github.io/): bio, professional activities, and publications with links to papers, code, and videos
+- [CV (HTML)](https://byeongjooahn.github.io/cv/): research interests, experience, education, all publications with links, service, awards, invited talks
+- [CV (PDF)](https://byeongjooahn.github.io/data/byeongjoo-ahn-cv.pdf)
+
+## Publications
+
+- [AToken: A Unified Tokenizer for Vision](https://arxiv.org/abs/2509.14476): J. Lu, L. Song, M. Xu, B. Ahn, Y. Wang, C. Chen, A. Dehghan, Y. Yang. CVPR 2026 (Oral). A unified visual tokenizer for high-fidelity reconstruction and semantic understanding across images, videos, and 3D assets. [project page](https://huggingface.co/papers/2509.14476), [code](https://github.com/apple-aiml-research/ml-atoken)
+- [Novel-view Acoustic Synthesis from 3D Reconstructed Rooms](https://arxiv.org/abs/2310.15130): B. Ahn, K. Yang, B. Hamilton, J. Sheaffer, A. Ranjan, M. Sarabia, O. Tuzel, J.-H. R. Chang. Interspeech 2024. Estimates spatial sound in reconstructed scenes by combining blind audio recordings with 3D information. [Project](https://machinelearning.apple.com/research/novel-view), [code](https://github.com/apple/ml-nvas3d)
+- [Neural Kaleidoscopic Space Sculpting](https://imaging.cs.cmu.edu/neural_kaleidoscopic_space_sculpting/): B. Ahn, M. De Zeeuw, I. Gkioulekas, A. C. Sankaranarayanan. CVPR 2023. Full-surround 3D reconstruction from a single kaleidoscopic image via neural surface sculpting. [Paper](https://byeongjooahn.github.io/data/neural_kaleidoscopic_cvpr2023.pdf), [code](https://github.com/ByeongjooAhn/neural_kaleidoscopic_space_sculpting)
+- [Kaleidoscopic Structured Light](https://imaging.cs.cmu.edu/kaleidoscopic_structured_light/): B. Ahn, I. Gkioulekas, A. C. Sankaranarayanan. ACM Transactions on Graphics (Proc. SIGGRAPH Asia) 2021. Structured light with hundreds of virtual projectors and cameras for full-surround scanning. [Code](https://github.com/ByeongjooAhn/kaleidoscopic_structured_light)
+- [Convolutional Approximations to the General Non-Line-of-Sight Imaging Operator](https://imaging.cs.cmu.edu/conv_nlos/): B. Ahn, A. Dave, A. Veeraraghavan, I. Gkioulekas, A. C. Sankaranarayanan. ICCV 2019 (Oral). A convolutional view of the NLOS imaging operator that enables efficient reconstruction. [Code](https://github.com/ByeongjooAhn/conv_nlos)
+- [Occlusion-Aware Video Deblurring with a New Layered Blur Model](https://arxiv.org/abs/1611.09572): B. Ahn, T. H. Kim, W. Kim, K. M. Lee. Tech report, 2016.
+- [Reduced Illumination Patterns for Acquisition of Specular and Diffuse Normal Maps](https://byeongjooahn.github.io/data/rip_sa.pdf): B. Ahn, J. Cho, T. Yoo, I.-J. Kim. ACM SIGGRAPH Asia Posters 2016.
+- [Dynamic Scene Deblurring](https://www.cv-foundation.org/openaccess/content_iccv_2013/papers/Kim_Dynamic_Scene_Deblurring_2013_ICCV_paper.pdf): T. H. Kim, B. Ahn, K. M. Lee. ICCV 2013.
+
+## Profiles
+
+- [Google Scholar](https://scholar.google.com/citations?user=sIMyihQAAAAJ)
+- [Semantic Scholar](https://www.semanticscholar.org/author/2910200)
+- [DBLP](https://dblp.org/pid/142/2789.html)
+- [OpenReview](https://openreview.net/profile?id=~Byeongjoo_Ahn5)
+- [GitHub](https://github.com/ByeongjooAhn)
+- [Hugging Face](https://huggingface.co/byeongjooahn)
+- [LinkedIn](https://www.linkedin.com/in/byeongjoo-ahn/)
+- [X](https://x.com/byeongjooahn)
