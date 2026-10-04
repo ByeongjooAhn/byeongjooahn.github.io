@@ -2,7 +2,7 @@
 
 > Byeongjoo Ahn is a research scientist at Apple in Seattle, working on large-scale pretraining of image and video generation foundation models for Apple Intelligence. Research interests span computer vision, computer graphics, and computational imaging, with a focus on generative models and representations for image, video, audio, and 3D content. Byeongjoo holds a PhD in Electrical and Computer Engineering from Carnegie Mellon University (2023), advised by Aswin C. Sankaranarayanan and Ioannis Gkioulekas, and BS and MS degrees from Seoul National University (advisor: Kyoung Mu Lee).
 
-- Current role: Research Scientist, Apple (Seattle, WA), since January 2024, working on large-scale pretraining of image and video generation foundation models for Apple Intelligence ([blog post](https://machinelearning.apple.com/research/introducing-third-generation-of-apple-foundation-models))
+- Current role: Research Scientist, Apple (Seattle, WA), since January 2024, working on large-scale pretraining of image and video generation foundation models for Apple Intelligence, including ADM 3 Cloud ([blog post](https://machinelearning.apple.com/research/introducing-third-generation-of-apple-foundation-models#creating-and-editing-images-with-adm-3-cloud))
 - Previously: Research Scientist, Center for Imaging Media Research, Korea Institute of Science and Technology (KIST), 2014–2017; research intern with Apple Machine Learning Research (2023) and the Snap Inc. Computational Imaging Group (2020)
 - PhD thesis: Full-surround 3D Reconstruction using Kaleidoscopes (Carnegie Mellon University, 2023)
 - Service: Area Chair for CVPR 2026–2027, ICLR 2027, NeurIPS 2024–2026, and ICML 2025; Program Committee for ICCP 2023–2026; Top Area Chair, NeurIPS 2025
