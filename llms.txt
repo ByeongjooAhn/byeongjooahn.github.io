@@ -16,7 +16,7 @@
 
 ## Publications
 
-- [AToken: A Unified Tokenizer for Vision](https://arxiv.org/abs/2509.14476): J. Lu, L. Song, M. Xu, B. Ahn, Y. Wang, C. Chen, A. Dehghan, Y. Yang. CVPR 2026 (Oral). A unified visual tokenizer for high-fidelity reconstruction and semantic understanding across images, videos, and 3D assets. [project page](https://huggingface.co/papers/2509.14476), [code](https://github.com/apple-aiml-research/ml-atoken)
+- [AToken: A Unified Tokenizer for Vision](https://arxiv.org/abs/2509.14476): J. Lu, L. Song, M. Xu, B. Ahn, Y. Wang, C. Chen, A. Dehghan, Y. Yang. CVPR 2026 (Oral). A unified visual tokenizer for high-fidelity reconstruction and semantic understanding across images, videos, and 3D assets. [project page](https://machinelearning.apple.com/research/atoken), [code](https://github.com/apple-aiml-research/ml-atoken)
 - [Novel-view Acoustic Synthesis from 3D Reconstructed Rooms](https://arxiv.org/abs/2310.15130): B. Ahn, K. Yang, B. Hamilton, J. Sheaffer, A. Ranjan, M. Sarabia, O. Tuzel, J.-H. R. Chang. Interspeech 2024. Estimates spatial sound in reconstructed scenes by combining blind audio recordings with 3D information. [Project](https://machinelearning.apple.com/research/novel-view), [code](https://github.com/apple/ml-nvas3d)
 - [Neural Kaleidoscopic Space Sculpting](https://imaging.cs.cmu.edu/neural_kaleidoscopic_space_sculpting/): B. Ahn, M. De Zeeuw, I. Gkioulekas, A. C. Sankaranarayanan. CVPR 2023. Full-surround 3D reconstruction from a single kaleidoscopic image via neural surface sculpting. [Paper](https://byeongjooahn.github.io/data/neural_kaleidoscopic_cvpr2023.pdf), [code](https://github.com/ByeongjooAhn/neural_kaleidoscopic_space_sculpting)
 - [Kaleidoscopic Structured Light](https://imaging.cs.cmu.edu/kaleidoscopic_structured_light/): B. Ahn, I. Gkioulekas, A. C. Sankaranarayanan. ACM Transactions on Graphics (Proc. SIGGRAPH Asia) 2021. Structured light with hundreds of virtual projectors and cameras for full-surround scanning. [Code](https://github.com/ByeongjooAhn/kaleidoscopic_structured_light)
@@ -35,3 +35,21 @@
 - [Hugging Face](https://huggingface.co/byeongjooahn)
 - [LinkedIn](https://www.linkedin.com/in/byeongjoo-ahn/)
 - [X](https://x.com/byeongjooahn)
+
+## Sources
+
+Third-party pages that confirm the roles above:
+
+- [NeurIPS 2025 Program Committee](https://neurips.cc/Conferences/2025/ProgramCommittee): listed as a Top Area Chair
+- [NeurIPS 2024 Program Committee](https://neurips.cc/Conferences/2024/ProgramCommittee): Area Chair
+- [NeurIPS 2022 Program Committee](https://neurips.cc/Conferences/2022/ProgramCommittee): Top Reviewer
+- [ICML 2025 Program Committee](https://icml.cc/Conferences/2025/ProgramCommittee): Area Chair (listed as Meta Reviewer)
+- [CVPR 2026 Program Committee](https://cvpr.thecvf.com/Conferences/2026/ProgramCommittee): Area Chair
+- [ICCP 2024 team](https://iccp2024.iccp-conference.org/team/): Program Committee
+- [ICCP 2023 team](https://iccp2023.iccp-conference.org/team/): Program Committee
+- [Apple at CVPR 2026](https://machinelearning.apple.com/updates/apple-at-cvpr-2026): Area Chair; AToken oral and Apple booth presentation
+- [Apple at NeurIPS 2025](https://machinelearning.apple.com/updates/apple-at-neurips-2025): Area Chair
+- [Apple at ICML 2025](https://machinelearning.apple.com/updates/apple-at-icml-2025): Area Chair
+- [Apple at NeurIPS 2024](https://machinelearning.apple.com/updates/apple-at-neurips-2024): Area Chair
+- [AToken on Apple Machine Learning Research](https://machinelearning.apple.com/research/atoken): author
+- [Novel-view Acoustic Synthesis on Apple Machine Learning Research](https://machinelearning.apple.com/research/novel-view): author
