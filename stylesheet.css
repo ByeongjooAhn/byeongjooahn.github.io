@@ -347,6 +347,8 @@ body{ padding-top:calc(var(--nav-h) + var(--safe-top)); }
 
 .authors{ font-size:13.9px; line-height:1.35; color:#222; text-wrap:pretty; }
 .authors a,.authors strong{ white-space:nowrap; }
+/* Co-first-author asterisks: small, and they don't open up the line spacing */
+.authors sup,.cv-item__authors sup{ font-size:.75em; line-height:0; }
 @media (prefers-color-scheme: dark){ .authors{ color:#e5e5e5; } }
 .authors a,.authors a:visited,.authors a:active{ color:inherit; text-decoration:none; }
 .authors a:hover,.authors a:focus{ color:inherit; text-decoration:underline; }
