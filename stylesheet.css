@@ -470,6 +470,13 @@ body{ padding-top:calc(var(--nav-h) + var(--safe-top)); }
 .cv-page .service dt{ white-space:nowrap; }
 .cv-section .cv-updated{ margin:22px 0 0; text-align:right; color:var(--muted); font-size:11px; }
 @media (max-width:600px){
+  /* Awards: the name on the first line (year on the right), the organization on a full-width gray line below */
+  .cv-item__body--line{ display:contents; }
+  .cv-item__award{ grid-column:1; grid-row:1; align-self:baseline; }
+  .cv-item__award-rest{ grid-column:1 / -1; grid-row:2; display:flex; flex-wrap:wrap; column-gap:4px; color:var(--muted); font-size:13px; }
+  .cv-item__award-sep{ display:none; }
+  .cv-item__award-org{ order:1; }
+  .cv-item__award-rest .muted{ order:2; }
   .cv-page .service{ grid-template-columns:1fr; row-gap:2px; }
   .cv-page .service dd + dt{ margin-top:8px; }
 }
